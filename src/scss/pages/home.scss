@@ -1,48 +1,23 @@
 .home {
 	@include df-column;
 
-	padding: 94px 150px 200px;
 	gap: 200px;
 
-	&__picture {
-		display: block;
-		margin: 0 auto 40px;
-		max-width: 500px;
-		opacity: 0;
-		transition: $duration-normal;
+	// &__picture {
+	// 	display: block;
+	// 	margin: 0 auto 40px;
+	// 	max-width: vw(500);
+	// 	opacity: 0;
+	// 	transition: $duration-normal;
 
-		&[data-loaded="true"] {
-			opacity: 1;
-		}
+	// 	&[data-loaded="true"] {
+	// 		opacity: 1;
+	// 	}
 
-		&--2 {
-			margin-top: 40px;
-			margin-bottom: 0;
-		}
-	}
-
-	&__text {
-		margin: 0 auto;
-		max-width: 500px;
-		font-size: 20px;
-		line-height: 26px;
-
-		a {
-			text-decoration: underline;
-
-			@include hover {
-				text-decoration: none;
-			}
-		}
-
-		code {
-			padding: 5px;
-			background-color: $color-gray;
-		}
-	}
-
-	// @include desktop {
-	// 	padding: 100px 0;
+	// 	&--2 {
+	// 		margin-top: 40px;
+	// 		margin-bottom: 0;
+	// 	}
 	// }
 
 	&__line--1 {
@@ -51,5 +26,15 @@
 
 	&__line--2 {
 		@include absolute-element(auto, auto, 68.1%, 0, 0, 150px, 5);
+	}
+
+	@include desktop {
+		padding: 94px vw(150) 200px;
+	}
+
+	@include desktop-xl {
+		margin: 0 auto;
+		padding: 94px 150px 200px;
+		max-width: $desktop-xl * 1px;
 	}
 }

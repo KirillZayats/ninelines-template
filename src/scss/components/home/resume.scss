@@ -1,12 +1,13 @@
 .resume {
 	@include df-row;
 
-	gap: 305px;
+	justify-content: space-between;
 
 	&__main-info {
 		@include df-column;
 
 		z-index: 5;
+		max-width: vw(565);
 		gap: 46px;
 	}
 
@@ -23,15 +24,20 @@
 	}
 
 	&__title {
-		@include font(700, 3.6rem, 140%);
-
 		margin: 0;
+
+		@include desktop {
+			@include font(700, 3rem, 140%);
+		}
+
+		@include laptop {
+			@include font(700, 3.6rem, 140%);
+		}
 	}
 
 	&__description {
 		@include font(400, 1.4rem, 140%);
 
-		max-width: 565px;
 		font-style: normal;
 		letter-spacing: -0.35px;
 	}
@@ -39,8 +45,15 @@
 	&__social {
 		@include df-column;
 
-		margin-top: 197px;
 		gap: 15px;
+
+		@include desktop {
+			margin: 197px 110px 0 0;
+		}
+
+		@include desktop-xl {
+			margin-top: 210px;
+		}
 	}
 
 	.social-links {

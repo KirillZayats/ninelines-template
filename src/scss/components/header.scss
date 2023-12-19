@@ -6,16 +6,9 @@
 	right: 0;
 	top: 0;
 	z-index: 4;
-	justify-content: flex-end;
-	padding: 101px 134px 15px 150px;
-	background: $color-low-gray;
 
-	&__logo {
-		display: block;
-		max-width: 140px;
-		max-height: 140px;
-		transition: $duration-normal;
-	}
+	// padding: 101px vw(134) 15px vw(150);
+	background: $color-low-gray;
 
 	&__menu {
 		z-index: 5;
@@ -32,14 +25,6 @@
 		@include font(700, 1.8rem, normal);
 
 		color: $color-black;
-
-		// @include hover {
-		// 	color: $color-black;
-		// }
-
-		// @include active {
-		// 	color: $color-black;
-		// }
 	}
 
 	&__burger {
@@ -73,6 +58,28 @@
 	}
 
 	&__line {
-		@include absolute-element(285px, 150px, 10px, 0, 0, 64%, 4);
+		@include desktop {
+			@include absolute-element(285px, 150px, 10px, 0, 0, calc(100% - 19vw - 240px), 4);
+		}
+
+		@include desktop-xl {
+			@include absolute-element(285px, 150px, 10px, 0, 0, calc(50% - 240px), 4);
+		}
+	}
+
+	@include desktop {
+		justify-content: flex-end;
+		padding: 101px vw(134) 15px vw(150);
+	}
+
+	// @include laptop {
+	// 	padding: 101px vw(134) 15px vw(150);
+	// }
+
+	@include desktop-xl {
+		justify-content: center;
+		margin: 0 auto;
+		padding: 101px 150px 15px;
+		max-width: $desktop-xl * 1px;
 	}
 }

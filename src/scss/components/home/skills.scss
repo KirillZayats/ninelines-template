@@ -15,12 +15,21 @@
 		@include df-row;
 
 		justify-content: space-between;
+		gap: 20px;
 
 		.list__item {
 			@include df-column;
 
-			max-width: 270px;
+			max-width: vw(270);
 			gap: 10px;
+
+			@include laptop {
+				max-width: vw(270);
+			}
+
+			@include desktop-xl {
+				max-width: 350px;
+			}
 		}
 
 		.list__title {

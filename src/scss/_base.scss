@@ -10,7 +10,6 @@ html {
 	min-height: 100vh;
 	box-sizing: border-box;
 	font-family: $font-primary;
-	font-size: 62.5%;
 	scroll-behavior: smooth;
 
 	&.has-cursor,
@@ -22,6 +21,14 @@ html {
 	&.is-lock-scroll,
 	&.is-lock-scroll body {
 		overflow: hidden;
+	}
+
+	@include desktop {
+		font-size: 62.5%;
+	}
+
+	@include desktop-xl {
+		font-size: 80%;
 	}
 }
 
