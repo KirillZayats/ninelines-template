@@ -1,0 +1,10 @@
+article.skills#skills-part
+	h2.skills__title
+		!= data.home.skills.title
+	ul.skills__list
+		each item, key in data.home.skills.list
+			li.list__item
+				h4.list__title
+					!= item.name
+				p.list__text
+					!= item.items

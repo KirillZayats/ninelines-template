@@ -1,0 +1,59 @@
+.resume {
+	@include df-row;
+
+	gap: 305px;
+
+	&__main-info {
+		@include df-column;
+
+		z-index: 5;
+		gap: 46px;
+	}
+
+	&__logotype {
+		max-width: 150px;
+		max-height: 150px;
+	}
+
+	&__text {
+		@include df-column;
+
+		color: $color-black;
+		gap: 30px;
+	}
+
+	&__title {
+		@include font(700, 3.6rem, 140%);
+
+		margin: 0;
+	}
+
+	&__description {
+		@include font(400, 1.4rem, 140%);
+
+		max-width: 565px;
+		font-style: normal;
+		letter-spacing: -0.35px;
+	}
+
+	&__social {
+		@include df-column;
+
+		margin-top: 197px;
+		gap: 15px;
+	}
+
+	.social-links {
+		@include df-column;
+
+		gap: 10px;
+
+		&__item {
+			@include font(400, 1.4rem, 140%);
+		}
+	}
+
+	.social-icons {
+		max-width: 115px;
+	}
+}

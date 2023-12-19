@@ -1,0 +1,139 @@
+.about {
+	@include df-row;
+
+	justify-content: space-between;
+	color: $color-black;
+
+	&__title {
+		@include font(700, 2.4rem, normal);
+
+		margin: 0;
+	}
+
+	&__text--gray {
+		@include font (400, 1.4rem, normal);
+
+		color: $color-gray;
+	}
+
+	&__text {
+		@include font (400, 1.4rem, normal);
+	}
+
+	&__text--bold {
+		@include font (700, 1.4rem, normal);
+	}
+
+	&__description {
+		line-height: 140%;
+	}
+
+	&__experience {
+		@include df-column;
+
+		z-index: 5;
+		max-width: 559px;
+		gap: 30px;
+
+		.experience__list {
+			@include df-column;
+
+			gap: 60px;
+		}
+
+		.experience-list__item {
+			@include df-column;
+
+			letter-spacing: -0.45px;
+			gap: 9px;
+		}
+
+		.container-job {
+			@include df-row;
+
+			align-items: center;
+			gap: 8px;
+		}
+
+		.container {
+			@include df-column;
+
+			gap: 3px;
+
+			&__additional-links {
+				@include df-column;
+
+				gap: 3px;
+			}
+
+			.about__link {
+				@include font(400, 1.4rem, normal);
+
+				border-bottom: 1px solid $color-blue;
+				color: $color-blue;
+			}
+		}
+	}
+
+	&__education {
+		@include df-column;
+
+		margin-right: 40px;
+		max-width: 270px;
+		text-align: center;
+		gap: 35px;
+
+		.education-list {
+			@include df-column;
+
+			max-width: 150px;
+			gap: 41px;
+		}
+
+		.education__text {
+			line-height: 140%;
+		}
+
+		.education-list__item {
+			@include df-column;
+
+			letter-spacing: -0.3px;
+			gap: 5px;
+
+			.education-list-type {
+				@include df-column;
+
+				gap: 5px;
+			}
+
+			.education-list__image {
+				margin: 0 auto;
+				max-width: 30px;
+			}
+
+			.education-list__image--first {
+				margin: 0 auto;
+				max-width: 61.5px;
+			}
+		}
+	}
+
+	&__container-image {
+		position: relative;
+		width: 100%;
+		max-width: 405px;
+	}
+
+	&__image {
+		position: absolute;
+		left: 25px;
+		z-index: 5;
+		display: block;
+		opacity: 0;
+		transition: $duration-normal;
+
+		&[data-loaded="true"] {
+			opacity: 1;
+		}
+	}
+}

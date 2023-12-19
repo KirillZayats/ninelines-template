@@ -1,88 +1,45 @@
 .header {
+	@include df-row;
+
 	position: fixed;
 	left: 0;
 	right: 0;
 	top: 0;
-	z-index: 2100;
-	display: flex;
-	align-items: center;
-	padding: 30px;
-	background-color: $color-white;
+	z-index: 4;
+	justify-content: flex-end;
+	padding: 101px 134px 15px 150px;
+	background: $color-low-gray;
 
 	&__logo {
 		display: block;
-		width: 140px;
-		height: 19px;
+		max-width: 140px;
+		max-height: 140px;
 		transition: $duration-normal;
 	}
 
 	&__menu {
-		position: fixed;
-		left: 0;
-		top: 0;
-		z-index: 98;
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		overflow: hidden;
-		overflow-y: auto;
-		margin: 0;
-		margin-top: 84px;
-		padding: 0 20px;
-		width: 100vw;
-		height: 100vh;
-		// stylelint-disable-next-line
-		height: calc(var(--vh) - 84px);
-		color: $color-black;
-		background-color: rgba($color-black, 0.1);
-		opacity: 0;
-		visibility: hidden;
-		transform: translateX(100%);
-		transition: $duration-normal;
-		-webkit-overflow-scrolling: touch;
-
-		@include active {
-			opacity: 1;
-			visibility: visible;
-			transform: translateX(0);
-		}
+		z-index: 5;
 	}
 
 	&__list {
-		width: 100%;
+		@include df-row;
+
 		text-align: center;
+		gap: 32px;
 	}
 
 	&__link {
-		position: relative;
-		display: flex;
-		align-items: center;
-		justify-content: left;
-		margin: 0 auto;
-		padding: 10px 30px;
-		min-height: 85px;
-		font-weight: 700;
-		font-size: 16px;
-		line-height: 25px;
-		text-align: left;
-		color: rgba($color-black, 0.7);
-		background-color: $color-white;
+		@include font(700, 1.8rem, normal);
 
-		&:not(:last-child) {
-			border-bottom: 1px solid $color-gray;
-		}
+		color: $color-black;
 
-		&:first-child {
-			border-top: 1px solid $color-gray;
-		}
+		// @include hover {
+		// 	color: $color-black;
+		// }
 
-		@include hover {
-			color: $color-black;
-		}
-
-		@include active {
-			color: $color-black;
-		}
+		// @include active {
+		// 	color: $color-black;
+		// }
 	}
 
 	&__burger {
@@ -113,5 +70,9 @@
 				}
 			}
 		}
+	}
+
+	&__line {
+		@include absolute-element(285px, 150px, 10px, 0, 0, 64%, 4);
 	}
 }

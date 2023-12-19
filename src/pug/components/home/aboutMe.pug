@@ -1,0 +1,64 @@
+section.about#about-part
+	article.about__experience
+		h2.about__title
+			!= data.home.about.experiences.title
+		ul.experience__list
+			each object, key in data.home.about.experiences.data
+				li.experience-list__item
+					span.about__text--gray
+						!= object.years
+					.container-job
+						span.about__text--bold
+							!= object.job
+						if object.rhombus
+							+lazyPicture({
+								src: `${baseDir}${object.rhombus}`,
+								alt: 'rhombus',
+							})
+					.container-job
+						if object.icon
+							+lazyPicture({
+								src: `${baseDir}${object.icon}`,
+								alt: object.name,
+							})
+						if object.name
+							span.about__text--bold
+								!= object.name
+						span.about__text
+							!= object.location
+					.container
+						p.about__text.about__description
+							!= object.description
+						ul.container__additional-links
+							each link, key in object.links
+								li.additional-links__item
+									span.about__link
+										!= link.name
+	.about__container-image
+		+lazyPicture({
+			src: `${baseDir}${data.home.about.image.link}`,
+			alt: data.home.about.image.name,
+		}).about__image
+	article.about__education
+		h2.about__title
+			!= data.home.about.educations.title
+		ul.education-list
+			each item, key in data.home.about.educations.data
+				li.education-list__item
+					if key === 0
+						+lazyPicture({
+								src: `${baseDir}${item.icon}`,
+								alt: 'rhombus',
+						}).education-list__image--first
+					else
+						+lazyPicture({
+								src: `${baseDir}${item.icon}`,
+								alt: 'rhombus',
+						}).education-list__image
+					span.about__text--bold.education__text
+						!= item.name
+					ul.education-list-type
+						each type, key in item.list
+							li.education-list-type__item
+								p.about__text.education__text
+									!= type.description

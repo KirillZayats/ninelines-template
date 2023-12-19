@@ -10,6 +10,8 @@
 @import "helpers";
 
 @import "components/header";
-@import "components/footer";
-
+@import "components/home/resume";
+@import "components/home/aboutMe";
+@import "components/home/skills";
 @import "pages/home";
+@import "components/footer";

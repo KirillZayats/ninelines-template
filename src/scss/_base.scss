@@ -10,6 +10,7 @@ html {
 	min-height: 100vh;
 	box-sizing: border-box;
 	font-family: $font-primary;
+	font-size: 62.5%;
 	scroll-behavior: smooth;
 
 	&.has-cursor,
@@ -30,6 +31,7 @@ body {
 	text-rendering: optimizeLegibility;
 	text-size-adjust: 100%;
 	-webkit-tap-highlight-color: transparent;
+	background: $color-low-gray;
 }
 
 main {

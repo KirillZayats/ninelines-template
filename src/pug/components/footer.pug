@@ -1,6 +1,5 @@
 footer.footer
-	.footer__copyright
-		span(data-actual-year)
-
-	.footer__developer
-		| &copy;&nbsp;Девять линий
+	+lazyPicture({
+		src: `${baseDir}images/love.${data.image.type}`,
+		alt: 'love',
+	}).footer__picture

@@ -1,0 +1,39 @@
+.skills {
+	@include df-column;
+
+	margin-top: -10px;
+	color: $color-black;
+	gap: 30px;
+
+	&__title {
+		@include font(700, 2.4rem, normal);
+
+		margin: 0;
+	}
+
+	&__list {
+		@include df-row;
+
+		justify-content: space-between;
+
+		.list__item {
+			@include df-column;
+
+			max-width: 270px;
+			gap: 10px;
+		}
+
+		.list__title {
+			@include font(700, 1.4rem, normal);
+
+			margin: 0;
+			letter-spacing: -0.3px;
+		}
+
+		.list__text {
+			@include font(400, 1.4rem, 140%);
+
+			letter-spacing: -0.5px;
+		}
+	}
+}

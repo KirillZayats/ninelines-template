@@ -1,5 +1,8 @@
 .home {
-	padding: 80px 20px;
+	@include df-column;
+
+	padding: 94px 150px 200px;
+	gap: 200px;
 
 	&__picture {
 		display: block;
@@ -38,7 +41,15 @@
 		}
 	}
 
-	@include desktop {
-		padding: 100px 0;
+	// @include desktop {
+	// 	padding: 100px 0;
+	// }
+
+	&__line--1 {
+		@include absolute-element(auto, auto, 16%, 0, 0, 150px, 5);
+	}
+
+	&__line--2 {
+		@include absolute-element(auto, auto, 68.1%, 0, 0, 150px, 5);
 	}
 }
