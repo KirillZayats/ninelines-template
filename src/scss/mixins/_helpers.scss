@@ -104,7 +104,7 @@
 	bottom: $bottom;
 	z-index: $index;
 	width: $width;
-	height: 0;
+	height: $height;
 	object-fit: cover;
 }
 

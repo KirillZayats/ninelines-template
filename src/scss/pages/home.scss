@@ -7,20 +7,37 @@
 		}
 
 		@include mobileM {
-			@include absolute-element(calc(100% + 20px), auto, -85px, 0, 0, -5px, -1);
+			@include absolute-element(calc(100% + 30px), auto, -100px, 0, 0, -10px, -1);
 
 			display: block;
 		}
 
-		// @include mobileL {
-		// 	@include absolute-element(calc(100% + 20px), auto, -65px, 0, 0, -5px, 5);
-		// }
+		@include mobileXL {
+			@include absolute-element(calc(100% + 30px), auto, -125px, 0, 0, -10px, -1);
+		}
+
+		@include tabletS {
+			@include absolute-element(calc(100% + 30px), auto, -145px, 0, 0, -10px, -1);
+		}
+
+		@include tablet {
+			@include absolute-element(calc(100% + 30px), auto, -175px, 0, 0, -10px, -1);
+		}
+
+		@include tabletL {
+			@include absolute-element(calc(100% + 30px), auto, -200px, 0, 0, -10px, -1);
+		}
+
 		@include desktop {
-			@include absolute-element(auto, auto, -90px, 0, 0, 0, -1);
+			@include absolute-element(auto, auto, -300px, 0, 0, 0, -1);
+		}
+
+		@include laptop {
+			@include absolute-element(auto, auto, -295px, 0, 0, 0, -1);
 		}
 
 		@include desktop-xl {
-			@include absolute-element(auto, auto, -130px, 0, 0, 0, -1);
+			@include absolute-element(auto, auto, -330px, 0, 0, 0, -1);
 		}
 	}
 
@@ -30,19 +47,27 @@
 		}
 
 		@include mobileM {
-			@include absolute-element(calc(100% + 20px), auto, -50px, 0, 0, -10px, -1);
+			@include absolute-element(calc(100% + 30px), auto, -50px, 0, 0, -10px, -1);
 
 			display: block;
 		}
 
 		@include mobileL {
-			@include absolute-element(calc(100% + 20px), auto, -60px, 0, 0, -10px, -1);
+			@include absolute-element(calc(100% + 30px), auto, -60px, 0, 0, -10px, -1);
 
 			display: block;
 		}
 
+		@include tablet {
+			@include absolute-element(calc(100% + 30px), auto, -85px, 0, 0, -10px, -1);
+		}
+
 		@include desktop {
-			@include absolute-element(auto, auto, 0, 0, 0, 0, -1);
+			@include absolute-element(auto, auto, -170px, 0, 0, -10, -1);
+		}
+
+		@include laptop {
+			@include absolute-element(auto, auto, -200px, 0, 0, -10, -1);
 		}
 	}
 

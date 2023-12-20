@@ -6,76 +6,241 @@
 	right: 0;
 	top: 0;
 	z-index: 4;
-	background: $color-low-gray;
 
 	&__menu {
-		z-index: 5;
+		// z-index: 5;
+		transition: all 0.5s ease-out;
+
+		@include mobile {
+			position: fixed;
+			left: 100%;
+			top: 0;
+			padding: 60px 40px;
+			width: calc(100%);
+			height: 100vh;
+			background: $color-low-gray;
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		@include mobileL {
+			padding: 100px 50px;
+		}
+
+		@include desktop {
+			position: static;
+			padding: 0;
+			width: auto;
+			height: auto;
+			background: none;
+			opacity: 1;
+			visibility: visible;
+		}
 	}
 
 	&__list {
-		@include df-row;
+		position: relative;
+		z-index: 7;
 
-		text-align: center;
-		gap: 32px;
+		@include mobile {
+			@include df-column;
+
+			width: fit-content;
+			gap: 40px;
+		}
+
+		@include mobileL {
+			margin: calc(50% - 153px) auto;
+		}
+
+		@include desktop {
+			@include df-row;
+
+			margin: auto;
+			width: auto;
+			gap: 32px;
+		}
 	}
 
 	&__link {
-		@include font(700, 1.8rem, normal);
-
-		color: $color-black;
-	}
-
-	&__burger {
-		z-index: 100;
-		flex-direction: column;
-		margin: (-6.5px / 2) 0;
-		margin-left: auto;
-		width: 39px;
 		color: $color-black;
 
-		span {
-			display: block;
-			margin: 6.5px 0;
-			width: 39px;
-			height: 2px;
-			background-color: currentColor;
-			transition: $duration-normal;
+		@include mobile {
+			@include font(700, 2.6rem, normal);
 		}
 
-		@include active {
-			span {
-				&:first-child {
-					transform: translate(0, 8px) rotate(-45deg);
-				}
+		@include mobileL {
+			@include font(700, 3rem, normal);
+		}
 
-				&:last-child {
-					transform: translate(0, -6px) rotate(45deg);
-				}
-			}
+		@include tablet {
+			@include font(700, 3.6rem, normal);
+		}
+
+		@include desktop {
+			@include font(700, 1.8rem, normal);
 		}
 	}
 
 	&__line {
+		@include mobile {
+			display: none;
+		}
+
 		@include desktop {
-			@include absolute-element(285px, 150px, 10px, 0, 0, calc(100% - 19vw - 240px), 4);
+			@include absolute-element(130px, auto, -20px, 0, 0, calc(50% + 265px), 4);
+
+			display: block;
 		}
 
 		@include desktop-xl {
-			@include absolute-element(285px, 150px, 10px, 0, 0, calc(50% - 240px), 4);
+			@include absolute-element(155px, auto, -70px, 0, 0, calc(50% - 200px), 4);
 		}
 	}
 
+	&__image-burger {
+		left: 100%;
+		bottom: 0;
+		transition: all 0.5s ease-out;
+
+		@include mobile {
+			position: fixed;
+			display: block;
+			width: auto;
+			height: auto;
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		@include mobileL {
+			width: vw(600, $tablet);
+		}
+
+		@include tablet {
+			width: vw(600, $desktop);
+		}
+
+		@include desktop {
+			position: static;
+			display: none;
+		}
+	}
+
+	.sidebar-input {
+		display: none;
+	}
+
+	.sidebar-menu {
+		top: 0;
+		z-index: 6;
+		align-items: center;
+		justify-content: center;
+		width: 30px;
+		height: 30px;
+		box-sizing: border-box;
+		transition: all 0.5s ease-in;
+		cursor: pointer;
+
+		&__item {
+			position: relative;
+			left: 0;
+			top: 0;
+			display: block;
+			border-radius: 5px;
+			width: 26px;
+			height: 2px;
+			background: $color-black;
+			opacity: 1;
+			transition: 0.3s ease-in;
+		}
+
+		@include mobile {
+			@include df-column;
+
+			gap: 6px;
+		}
+
+		@include desktop {
+			display: none;
+		}
+	}
+
+	input[type="checkbox"]:checked ~ .sidebar-menu .top {
+		top: 9px;
+		transform: rotate(-45deg);
+	}
+
+	input[type="checkbox"]:checked ~ .sidebar-menu .bottom {
+		top: -7px;
+		transform: rotate(45deg);
+	}
+
+	input[type="checkbox"]:checked ~ .sidebar-menu .middle {
+		opacity: 0;
+	}
+
+	input[type="checkbox"]:checked ~ &__menu,
+	input[type="checkbox"]:checked ~ &__list {
+		left: 0;
+		opacity: 1;
+		visibility: visible;
+	}
+
+	input[type="checkbox"]:checked ~ &__image-burger {
+		opacity: 1;
+		visibility: visible;
+
+		@include mobile {
+			left: 0;
+		}
+
+		@include mobileL {
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+
+
+	// input[type="checkbox"]:checked ~ &__image-burger {
+	// 	width: auto;
+	// 	height: auto;
+	// }
+
+	// input[type="checkbox"]:checked ~ .menu__active {
+	// 	visibility: visible;
+	// 	opacity: 1;
+	// 	left: 0;
+	// }
+
 	@include mobile {
-		padding: 15px 20px 40px;
+		justify-content: flex-end;
+		padding: 25px 20px 15px;
+		background-image:
+			linear-gradient(
+				20deg,
+				rgba(255, 255, 255, -166.7) 45%,
+				$color-low-gray 65%,
+				$color-low-gray 100%
+			);
 	}
 
 	@include mobileL {
-		padding: 40px 40px 15px;
+		padding: 30px 20px;
+	}
+
+	@include tablet {
+		background-image:
+			linear-gradient(
+				20deg,
+				rgba(255, 255, 255, -166.7) 70%,
+				$color-low-gray 90%,
+				$color-low-gray 100%
+			);
 	}
 
 	@include desktop {
-		justify-content: flex-end;
 		padding: 101px 150px 15px;
+		background-color: $color-low-gray;
 	}
 
 	@include desktop-xl {

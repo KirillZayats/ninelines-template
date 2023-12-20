@@ -54,6 +54,24 @@
 	}
 }
 
+@mixin mobileXL {
+	@media (min-width: ($mobileL * 1px + 100px)) {
+		@content;
+	}
+}
+
+@mixin tabletS {
+	@media (min-width: ($tablet * 1px - 150px)) {
+		@content;
+	}
+}
+
+@mixin tabletL {
+	@media (min-width: ($tablet * 1px + 150px)) {
+		@content;
+	}
+}
+
 @mixin devices {
 	@media (max-width: (($desktop - 1) * 1px)) {
 		@content;
