@@ -6,6 +6,16 @@
 	width: 100%;
 
 	&__picture {
-		max-width: vw(501);
+		@include mobile {
+			max-width: vw(501, $mobile);
+		}
+
+		@include tablet {
+			max-width: vw(501, $tablet);
+		}
+
+		@include desktop {
+			max-width: vw(501);
+		}
 	}
 }

@@ -1,10 +1,26 @@
 article.skills#skills-part
-	h2.skills__title
-		!= data.home.skills.title
-	ul.skills__list
-		each item, key in data.home.skills.list
-			li.list__item
-				h4.list__title
-					!= item.name
-				p.list__text
-					!= item.items
+	+lazyPicture({
+		src: `${baseDir}images/sprites/svg/lineMain2.svg`,
+		alt: 'line main 2',
+		appear: false,
+	}, [
+			{
+				srcset: `${baseDir}images/sprites/svg/lineMain2m.svg`,
+				media: '(min-width: 0px) and (max-width: 425px)',
+			},
+			{
+				srcset: `${baseDir}images/sprites/svg/lineMain2.svg`,
+				media: '(min-width: 426px)',
+			}
+		]
+	).container-lines__line--2
+	.skills-container
+		h2.skills__title
+			!= data.home.skills.title
+		ul.skills__list
+			each item, key in data.home.skills.list
+				li.list__item
+					h4.list__title
+						!= item.name
+					p.list__text
+						!= item.items

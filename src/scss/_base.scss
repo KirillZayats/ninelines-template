@@ -23,7 +23,7 @@ html {
 		overflow: hidden;
 	}
 
-	@include desktop {
+	@include mobile {
 		font-size: 62.5%;
 	}
 

@@ -1,4 +1,19 @@
 section.about#about-part
+	+lazyPicture({
+		src: `${baseDir}images/sprites/svg/lineMain1.svg`,
+		alt: 'line main 1',
+		appear: false,
+	}, [
+			{
+				srcset: `${baseDir}images/sprites/svg/lineMain1m.svg`,
+				media: '(min-width: 0px) and (max-width: 425px)',
+			},
+			{
+				srcset: `${baseDir}images/sprites/svg/lineMain1.svg`,
+				media: '(min-width: 426px)',
+			}
+		]
+	).container-lines__line--1
 	article.about__experience
 		h2.about__title
 			!= data.home.about.experiences.title
@@ -21,11 +36,12 @@ section.about#about-part
 								src: `${baseDir}${object.icon}`,
 								alt: object.name,
 							})
-						if object.name
-							span.about__text--bold
-								!= object.name
-						span.about__text
-							!= object.location
+						.container-text
+							if object.name
+								span.about__text--bold
+									!= object.name
+							span.about__text
+								!= object.location
 					.container
 						p.about__text.about__description
 							!= object.description

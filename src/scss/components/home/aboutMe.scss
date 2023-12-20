@@ -1,13 +1,17 @@
 .about {
-	@include df-row;
-
-	justify-content: space-between;
+	position: relative;
 	color: $color-black;
 
 	&__title {
-		@include font(700, 2.4rem, normal);
-
 		margin: 0;
+
+		@include mobile {
+			@include font(700, 2rem, normal);
+		}
+
+		@include tablet {
+			@include font(700, 2.4rem, normal);
+		}
 	}
 
 	&__text--gray {
@@ -31,21 +35,49 @@
 	&__experience {
 		@include df-column;
 
-		z-index: 5;
-		max-width: 559px;
-		gap: 30px;
+		width: 100%;
 
 		.experience__list {
-			@include df-column;
+			@include mobile {
+				@include df-column;
 
-			gap: 60px;
+				gap: 60px;
+			}
+
+			@include tablet {
+				@include df-row;
+
+				flex-wrap: wrap;
+				justify-content: space-between;
+				gap: 30px;
+			}
+
+			@include desktop {
+				@include df-column;
+
+				gap: 60px;
+			}
 		}
 
 		.experience-list__item {
 			@include df-column;
 
+			width: 100%;
 			letter-spacing: -0.45px;
-			gap: 9px;
+
+			@include mobile {
+				gap: 8.5px;
+			}
+
+			@include tablet {
+				max-width: vw(325, $tablet);
+				gap: 9px;
+			}
+
+			@include desktop {
+				max-width: 100%;
+				gap: 9px;
+			}
 		}
 
 		.container-job {
@@ -53,6 +85,13 @@
 
 			align-items: center;
 			gap: 8px;
+
+			.container-text {
+				@include df-row;
+
+				flex-wrap: wrap;
+				gap: 0 8px;
+			}
 		}
 
 		.container {
@@ -69,29 +108,57 @@
 			.about__link {
 				@include font(400, 1.4rem, normal);
 
-				border-bottom: 1px solid $color-blue;
+				text-decoration-line: underline;
 				color: $color-blue;
 			}
+		}
+
+		@include mobile {
+			max-width: 100%;
+			gap: 20px;
+		}
+
+		@include tablet {
+			gap: 30px;
+		}
+
+		@include desktop {
+			z-index: 5;
+			max-width: vw(555);
+		}
+
+		@include desktop-xl {
+			z-index: 3;
+			max-width: 600px;
 		}
 	}
 
 	&__education {
 		@include df-column;
 
-		margin-right: 40px;
-		max-width: 270px;
-		text-align: center;
-		gap: 35px;
-
 		.education-list {
-			@include df-column;
+			@include df-row;
 
-			max-width: 150px;
-			gap: 41px;
+			flex-wrap: wrap;
+
+			@include mobile {
+				justify-content: space-between;
+				gap: 20px;
+			}
+
+			@include tablet {
+				justify-content: center;
+			}
+
+			@include desktop {
+				max-width: 150px;
+				gap: 41px;
+			}
 		}
 
 		.education__text {
 			line-height: 140%;
+			text-align: center;
 		}
 
 		.education-list__item {
@@ -108,26 +175,71 @@
 
 			.education-list__image {
 				margin: 0 auto;
-				max-width: 30px;
+
+				@include mobile {
+					width: 40px;
+				}
+
+				@include tablet {
+					width: 30px;
+				}
 			}
 
 			.education-list__image--first {
 				margin: 0 auto;
 				max-width: 61.5px;
 			}
+
+			@include mobile {
+				width: 100%;
+			}
+
+			@include mobileM {
+				width: 157px;
+			}
+
+			@include mobileL {
+				width: 100%;
+				max-width: 160px;
+			}
+
+			@include tablet {
+				max-width: 250px;
+			}
+
+			@include desktop {
+				width: 100%;
+				max-width: 150px;
+			}
+		}
+
+		@include mobile {
+			gap: 16px;
+		}
+
+		@include desktop {
+			align-items: center;
+			margin-right: 55px;
+			max-width: vw(270);
+			gap: 35px;
 		}
 	}
 
 	&__container-image {
 		position: relative;
+		margin: 0 auto;
 		width: 100%;
-		max-width: 405px;
+
+		@include mobile {
+			max-width: vw(116, $mobile);
+		}
+
+		@include desktop {
+			max-width: 370px;
+		}
 	}
 
 	&__image {
-		position: absolute;
-		left: 25px;
-		z-index: 5;
 		display: block;
 		opacity: 0;
 		transition: $duration-normal;
@@ -135,5 +247,32 @@
 		&[data-loaded="true"] {
 			opacity: 1;
 		}
+
+		@include mobile {
+			position: relative;
+		}
+
+		@include desktop {
+			position: absolute;
+			left: -12px;
+			z-index: 5;
+		}
+
+		@include desktop-xl {
+			z-index: 3;
+		}
+	}
+
+	@include mobile {
+		@include df-column;
+
+		gap: 40px;
+	}
+
+	@include desktop {
+		@include df-row;
+
+		justify-content: space-between;
+		gap: 0;
 	}
 }

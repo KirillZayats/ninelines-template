@@ -6,8 +6,6 @@
 	right: 0;
 	top: 0;
 	z-index: 4;
-
-	// padding: 101px vw(134) 15px vw(150);
 	background: $color-low-gray;
 
 	&__menu {
@@ -67,19 +65,23 @@
 		}
 	}
 
-	@include desktop {
-		justify-content: flex-end;
-		padding: 101px vw(134) 15px vw(150);
+	@include mobile {
+		padding: 15px 20px 40px;
 	}
 
-	// @include laptop {
-	// 	padding: 101px vw(134) 15px vw(150);
-	// }
+	@include mobileL {
+		padding: 40px 40px 15px;
+	}
+
+	@include desktop {
+		justify-content: flex-end;
+		padding: 101px 150px 15px;
+	}
 
 	@include desktop-xl {
 		justify-content: center;
 		margin: 0 auto;
-		padding: 101px 150px 15px;
+		padding: 80px 150px 15px;
 		max-width: $desktop-xl * 1px;
 	}
 }

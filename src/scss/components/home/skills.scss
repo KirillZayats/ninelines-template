@@ -1,29 +1,59 @@
 .skills {
-	@include df-column;
+	position: relative;
+	z-index: 1;
 
-	margin-top: -10px;
-	color: $color-black;
-	gap: 30px;
+	&-container {
+		@include df-column;
+
+		color: $color-black;
+
+		@include mobile {
+			margin-top: 5px;
+			gap: 20px;
+		}
+
+		@include tablet {
+			margin-top: -10px;
+			gap: 30px;
+		}
+	}
 
 	&__title {
-		@include font(700, 2.4rem, normal);
-
 		margin: 0;
+
+		@include mobile {
+			@include font(700, 2.2rem, normal);
+		}
+
+		@include tablet {
+			@include font(700, 2.4rem, normal);
+		}
 	}
 
 	&__list {
-		@include df-row;
-
-		justify-content: space-between;
-		gap: 20px;
+		// @include mobileL {
+		// 	@include df-row;
+		// 	flex-wrap: wrap;
+		// justify-content: space-between;
+		// }
 
 		.list__item {
 			@include df-column;
 
-			max-width: vw(270);
-			gap: 10px;
+			@include mobile {
+				gap: 5px;
+			}
 
-			@include laptop {
+			@include mobileL {
+				max-width: vw(140, $mobileL);
+			}
+
+			@include tablet {
+				max-width: vw(200, $tablet);
+				gap: 10px;
+			}
+
+			@include desktop {
 				max-width: vw(270);
 			}
 
@@ -43,6 +73,19 @@
 			@include font(400, 1.4rem, 140%);
 
 			letter-spacing: -0.5px;
+		}
+
+		@include mobile {
+			@include df-column;
+
+			gap: 23px;
+		}
+
+		@include mobileL {
+			@include df-row;
+
+			flex-wrap: wrap;
+			justify-content: space-between;
 		}
 	}
 }
