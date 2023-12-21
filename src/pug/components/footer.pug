@@ -1,2 +1,14 @@
 footer.footer
-	img.footer__picture(src=`${baseDir}images/love.${data.image.type}` alt="love")
+	.footer__container
+		each image, key in data.footer.images
+			if key === 0
+				+lazyPicture({
+					src: `${baseDir}${image.url}`,
+					alt: image.alt,
+				}).footer__picture.image--visible.hidder-image__left
+			else
+				+lazyPicture({
+					src: `${baseDir}${image.url}`,
+					alt: image.alt,
+				}).footer__picture.image--visible.hidder-image__right
+	//- img.footer__picture(src=`${baseDir}images/love.${data.image.type}` alt="love")

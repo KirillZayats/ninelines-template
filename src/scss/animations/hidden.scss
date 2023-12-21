@@ -1,4 +1,3 @@
-
 .hidden-up {
 	opacity: 0;
 	transform: translateY(20px);
@@ -6,5 +5,36 @@
 
 .hidden-right {
 	opacity: 0;
-	transform: translateX(-200px);
+
+	@include mobile {
+		transform: translateX(-50px);
+	}
+
+	@include mobileL {
+		transform: translateX(-200px);
+	}
+}
+
+.hidden-left {
+	opacity: 0;
+
+	@include mobile {
+		transform: translateX(50px);
+	}
+
+	@include mobileL {
+		transform: translateX(200px);
+	}
+}
+
+.hidder-image__left {
+	opacity: 0;
+	transform: rotate(-45deg);
+	transform-origin: right bottom;
+}
+
+.hidder-image__right {
+	opacity: 0;
+	transform: rotate(45deg);
+	transform-origin: left bottom;
 }

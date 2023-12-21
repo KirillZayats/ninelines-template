@@ -253,8 +253,9 @@
 		}
 
 		@include desktop {
-			position: absolute;
+			position: sticky;
 			left: -12px;
+			top: 0;
 			z-index: 5;
 		}
 

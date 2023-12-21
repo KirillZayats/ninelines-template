@@ -1,6 +1,6 @@
 section.resume#resume-part
 	.resume__main-info
-		.resume__logotype
+		.resume__logotype.title--visible.hidden-right
 			+lazyPicture({
 				src: `${baseDir}images/logotype.${data.image.type}`,
 				alt: 'logotype',
@@ -11,7 +11,7 @@ section.resume#resume-part
 			p.resume__description.block-text--visible.hidden-up
 				!= data.home.resume.description
 
-	.resume__social
+	.resume__social.block-left--visible.hidden-left
 		ul.social-links
 			each object, key in data.home.resume.socialLinks
 				li.social-links__item

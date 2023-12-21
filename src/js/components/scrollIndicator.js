@@ -14,6 +14,17 @@ import DOM from '../domHelper';
 	progressBar.style.strokeDasharray = totalLength;
 	progressBar.style.strokeDashoffset = totalLength - 1;
 
+	const changeContentIndicator = (scrolledValue, offSet) => {
+		DOM.html(textScroll, `${scrolledValue >= 1 ? scrolledValue : 1}%`);
+		if (+offSet === 0) {
+			DOM.addClass(textScroll, blockHide);
+			DOM.removeClass(arrow, blockHide);
+		} else {
+			DOM.removeClass(textScroll, blockHide);
+			DOM.addClass(arrow, blockHide);
+		}
+	};
+
 	const scrollIndicator = () => {
 		winScroll =
 			document.body.scrollTop || document.documentElement.scrollTop;
@@ -25,18 +36,16 @@ import DOM from '../domHelper';
 		progressBar.style.strokeDashoffset =
 			+offSet === +totalLength ? offSet - 1 : offSet;
 
-		DOM.html(textScroll, `${scrolled >= 1 ? scrolled : 1}%`);
-		if (+offSet === 0) {
-			DOM.addClass(textScroll, blockHide);
-			DOM.removeClass(arrow, blockHide);
-		} else {
-			DOM.removeClass(textScroll, blockHide);
-			DOM.addClass(arrow, blockHide);
-		}
+		changeContentIndicator(scrolled, offSet);
 	};
 	scrollIndicator();
 	window.addEventListener('scroll', () => {
 		scrollIndicator();
+
+		// let scrollPosition = DOM.search(`html`).scrollTop;
+		// let image = DOM.search('.about__image');
+		// console.log(scrollPosition);
+		// image.style.transform = `translateY(${scrollPosition}px)`;
 	});
 	scrollUp.addEventListener('click', () => {
 		window.scrollTo(0, 0);

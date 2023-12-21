@@ -52,7 +52,12 @@ body::-webkit-scrollbar {
 	overflow: hidden;
 }
 
-.title--visible {
+.image--visible {
+	@include visible(0.6);
+}
+
+.title--visible,
+.block-left--visible {
 	@include visible(0.7);
 }
 
