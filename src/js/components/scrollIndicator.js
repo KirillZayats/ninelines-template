@@ -2,6 +2,7 @@ import DOM from '../domHelper';
 
 {
 	const scrollUp = document.querySelector('.scroll-up');
+	const classActive = 'scroll-up--active';
 	const textScroll = document.querySelector('.scroll-up__text');
 	const arrow = document.querySelector('.scroll-up__arrow');
 	const progressBar = document.querySelector('.indicator-bar');
@@ -10,6 +11,7 @@ import DOM from '../domHelper';
 	let winScroll;
 	let height;
 	let scrolled;
+	let interval;
 
 	progressBar.style.strokeDasharray = totalLength;
 	progressBar.style.strokeDashoffset = totalLength - 1;
@@ -25,9 +27,24 @@ import DOM from '../domHelper';
 		}
 	};
 
+	const createInterval = (timeThis) => {
+		if (winScroll < 200) {
+			DOM.removeClass(scrollUp, classActive);
+		} else {
+			interval = setInterval(() => {
+				DOM.removeClass(scrollUp, classActive);
+			}, timeThis * 1500);
+		}
+	};
+
+	const removeScroll = () => {
+		DOM.addClass(scrollUp, classActive);
+		clearInterval(interval);
+		createInterval(1);
+	};
+
 	const scrollIndicator = () => {
-		winScroll =
-			document.body.scrollTop || document.documentElement.scrollTop;
+		winScroll = document.documentElement.scrollTop;
 		height =
 			document.documentElement.scrollHeight -
 			document.documentElement.clientHeight;
@@ -41,13 +58,17 @@ import DOM from '../domHelper';
 	scrollIndicator();
 	window.addEventListener('scroll', () => {
 		scrollIndicator();
-
-		// let scrollPosition = DOM.search(`html`).scrollTop;
-		// let image = DOM.search('.about__image');
-		// console.log(scrollPosition);
-		// image.style.transform = `translateY(${scrollPosition}px)`;
+		removeScroll();
+	});
+	scrollUp.addEventListener('mouseover', () => {
+		clearInterval(interval);
+		DOM.addClass(scrollUp, classActive);
+	});
+	scrollUp.addEventListener('mouseout', () => {
+		removeScroll();
 	});
 	scrollUp.addEventListener('click', () => {
 		window.scrollTo(0, 0);
+		removeScroll();
 	});
 }

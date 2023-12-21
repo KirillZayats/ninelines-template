@@ -4,6 +4,7 @@
 	justify-content: center;
 	margin: 0 auto 50px;
 	width: 100%;
+	min-height: 160px;
 
 	&__container {
 		@include df-row;
@@ -19,11 +20,11 @@
 		}
 
 		@include tablet {
-			max-width: vw(501, $tablet);
+			max-width: vw(250, $tablet);
 		}
 
 		@include desktop {
-			max-width: vw(501);
+			max-width: vw(250);
 		}
 	}
 }

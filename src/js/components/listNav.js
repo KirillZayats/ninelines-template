@@ -1,9 +1,16 @@
 import DOM from '../domHelper';
+import {initObserver} from '../modules/observer';
 import {sideBarInput, body} from './burgerMenu';
 
 const listNav = DOM.searchAll('.header__link');
 const navLines = DOM.searchAll('.header__line');
 const nameActiveLine = 'header__line--active';
+
+const listMainBlocks = [
+	DOM.searchById('resume-part'),
+	DOM.searchById('about-part'),
+	DOM.searchById('skills-part'),
+];
 
 const getIndexByIdData = (elements, attr, value) => {
 	let item;
@@ -17,12 +24,12 @@ const getIndexByIdData = (elements, attr, value) => {
 	return item;
 };
 
-const initClass = (elements, value, id) => {
-	for (let index = 0; index < elements.length; index++) {
-		if (+id === index) {
-			DOM.addClass(elements[index], value);
+const initClass = (args) => {
+	for (let index = 0; index < args[0].length; index++) {
+		if (+args[2] === index) {
+			DOM.addClass(args[0][index], args[1]);
 		} else {
-			DOM.removeClass(elements[index], value);
+			DOM.removeClass(args[0][index], args[1]);
 		}
 	}
 };
@@ -31,11 +38,24 @@ const clickElementBar = (element) => {
 	element.addEventListener('click', () => {
 		DOM.removeClass(body, 'no-scroll');
 		sideBarInput.checked = false;
-		let id = getIndexByIdData(navLines, 'data-id', DOM.getAttr(element, 'data-link'));
-		initClass(navLines, nameActiveLine, id);
+		let id = getIndexByIdData(
+			navLines,
+			'data-id',
+			DOM.getAttr(element, 'data-link'),
+		);
+		initClass([navLines, nameActiveLine, id]);
 	});
 };
 
 listNav.forEach((element) => {
 	clickElementBar(element);
+});
+
+listMainBlocks.forEach((element, index) => {
+	let observer = initObserver(
+		initClass,
+		[navLines, nameActiveLine, index],
+		false,
+	);
+	observer.observe(element);
 });

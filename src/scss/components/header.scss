@@ -242,8 +242,12 @@
 	}
 
 	@include desktop {
-		padding: 101px 150px 5px;
+		padding: 50px 150px 5px;
 		background-color: $color-low-gray;
+	}
+
+	@include laptop {
+		padding: 101px 150px 5px;
 	}
 
 	@include desktop-xl {

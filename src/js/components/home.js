@@ -9,16 +9,16 @@ const blockRights = DOM.searchAll('.title--visible');
 const blockLefts = DOM.searchAll('.block-left--visible');
 
 blockUps.forEach((element) => {
-	let observer = initObserver(classHiddenUp, element);
+	let observer = initObserver(DOM.removeClassByArray, [element, classHiddenUp]);
 	observer.observe(element);
 });
 
 blockRights.forEach((element) => {
-	let observer = initObserver(classHiddenRight, element);
+	let observer = initObserver(DOM.removeClassByArray, [element, classHiddenRight]);
 	observer.observe(element);
 });
 
 blockLefts.forEach((element) => {
-	let observer = initObserver(classHiddenLeft, element);
+	let observer = initObserver(DOM.removeClassByArray, [element, classHiddenLeft]);
 	observer.observe(element);
 });

@@ -228,15 +228,6 @@
 	&__container-image {
 		position: relative;
 		margin: 0 auto;
-		width: 100%;
-
-		@include mobile {
-			max-width: vw(116, $mobile);
-		}
-
-		@include desktop {
-			max-width: 370px;
-		}
 	}
 
 	&__image {
@@ -250,6 +241,21 @@
 
 		@include mobile {
 			position: relative;
+			min-height: 170px;
+			max-width: vw(116, $mobile);
+		}
+
+		@include mobileM {
+			min-height: 200px;
+		}
+
+		@include mobileL {
+			min-height: 225px;
+		}
+
+		@include tablet {
+			min-height: 365px;
+			max-width: 250px;
 		}
 
 		@include desktop {
@@ -257,6 +263,13 @@
 			left: -12px;
 			top: 0;
 			z-index: 5;
+			margin-left: -60px;
+			max-width: 300px;
+		}
+
+		@include laptop {
+			margin-left: -50px;
+			max-width: 340px;
 		}
 
 		@include desktop-xl {

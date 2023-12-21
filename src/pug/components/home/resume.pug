@@ -2,7 +2,7 @@ section.resume#resume-part
 	.resume__main-info
 		.resume__logotype.title--visible.hidden-right
 			+lazyPicture({
-				src: `${baseDir}images/logotype.${data.image.type}`,
+				src: `${baseDir}${data.home.resume.logotype}`,
 				alt: 'logotype',
 			}).logotype__picture
 		.resume__text
@@ -17,7 +17,7 @@ section.resume#resume-part
 				li.social-links__item
 					a(href=object.url target="_blank")
 						!= object.name
-		.social-icons
+		.social-icons#shareButton
 			svg(
 				xmlns="http://www.w3.org/2000/svg" width="115" height="25" viewbox="0 0 115 25" fill="none")
 				rect(width="25" height="25" rx="5" fill="#282a33")

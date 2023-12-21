@@ -3,16 +3,14 @@ import {initObserver} from '../modules/observer';
 
 const classHiddenLeft = 'hidder-image__left';
 const classHiddenRight = 'hidder-image__right';
-
-// const classHiddenRight = 'hidden-right';
 const images = DOM.searchAll('.image--visible');
 
 images.forEach((element, key) => {
 	let observer;
 	if (key === 0) {
-		observer = initObserver(classHiddenLeft, element);
+		observer = initObserver(DOM.removeClassByArray, [element, classHiddenLeft]);
 	} else {
-		observer = initObserver(classHiddenRight, element);
+		observer = initObserver(DOM.removeClassByArray, [element, classHiddenRight]);
 	}
 	observer.observe(element);
 });

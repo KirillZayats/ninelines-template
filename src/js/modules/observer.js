@@ -1,11 +1,12 @@
-import DOM from '../domHelper';
-const initObserver = (nameClass, element) => {
+const initObserver = (callback, args, isStatus = true) => {
 	return new IntersectionObserver(
 		(entries, observer) => {
 			entries.forEach((entry) => {
 				if (entry.isIntersecting) {
-					DOM.removeClass(element, nameClass);
-					observer.unobserve(entry.target);
+					callback(args);
+					if (isStatus) {
+						observer.unobserve(entry.target);
+					}
 				}
 			});
 		},

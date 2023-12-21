@@ -1,40 +1,38 @@
 .hidden-up {
-	opacity: 0;
-	transform: translateY(20px);
+	@include desktop {
+		opacity: 0;
+		transform: translateY(20px);
+	}
 }
 
 .hidden-right {
-	opacity: 0;
-
-	@include mobile {
-		transform: translateX(-50px);
-	}
-
-	@include mobileL {
+	@include desktop {
+		opacity: 0;
 		transform: translateX(-200px);
 	}
 }
 
 .hidden-left {
-	opacity: 0;
-
-	@include mobile {
-		transform: translateX(50px);
-	}
-
-	@include mobileL {
+	@include desktop {
+		opacity: 0;
 		transform: translateX(200px);
 	}
 }
 
 .hidder-image__left {
-	opacity: 0;
-	transform: rotate(-45deg);
-	transform-origin: right bottom;
+	@include desktop {
+		opacity: 0;
+		transform: rotate(-45deg);
+		transform-origin: right bottom;
+		scale: 0;
+	}
 }
 
 .hidder-image__right {
-	opacity: 0;
-	transform: rotate(45deg);
-	transform-origin: left bottom;
+	@include desktop {
+		opacity: 0;
+		transform: rotate(45deg);
+		transform-origin: left bottom;
+		scale: 0;
+	}
 }

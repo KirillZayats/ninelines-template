@@ -39,6 +39,10 @@ export default class DOM {
 		element.classList.remove(className);
 	};
 
+	static removeClassByArray = (args) => {
+		DOM.removeClass(args[0], args[1]);
+	};
+
 	static toggle = (element, classList) => {
 		element.classList.toggle(classList);
 	};

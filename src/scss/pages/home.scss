@@ -81,8 +81,12 @@
 	}
 
 	@include desktop {
-		padding: 94px vw(150) 200px;
+		padding: 94px vw(150) 100px;
 		gap: 200px;
+	}
+
+	@include laptop {
+		padding: 94px vw(150) 200px;
 	}
 
 	@include desktop-xl {
