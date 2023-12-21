@@ -32,7 +32,12 @@ html {
 	}
 }
 
+.no-scroll {
+	overflow: hidden;
+}
+
 body {
+	position: relative;
 	-webkit-font-smoothing: antialiased;
 	text-decoration-skip: objects;
 	text-rendering: optimizeLegibility;

@@ -7,7 +7,11 @@
 
 	&__picture {
 		@include mobile {
-			max-width: vw(501, $mobile);
+			max-width: 100%;
+		}
+
+		@include mobileL {
+			max-width: 75%;
 		}
 
 		@include tablet {

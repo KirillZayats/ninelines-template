@@ -8,7 +8,6 @@
 	z-index: 4;
 
 	&__menu {
-		// z-index: 5;
 		transition: all 0.5s ease-out;
 
 		@include mobile {
@@ -200,18 +199,6 @@
 		}
 	}
 
-
-	// input[type="checkbox"]:checked ~ &__image-burger {
-	// 	width: auto;
-	// 	height: auto;
-	// }
-
-	// input[type="checkbox"]:checked ~ .menu__active {
-	// 	visibility: visible;
-	// 	opacity: 1;
-	// 	left: 0;
-	// }
-
 	@include mobile {
 		justify-content: flex-end;
 		padding: 25px 20px 15px;
@@ -239,7 +226,7 @@
 	}
 
 	@include desktop {
-		padding: 101px 150px 15px;
+		padding: 101px 150px 5px;
 		background-color: $color-low-gray;
 	}
 
