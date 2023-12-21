@@ -57,10 +57,6 @@
 		}
 
 		@include desktop {
-			@include font(700, 3rem, 140%);
-		}
-
-		@include laptop {
 			@include font(700, 3.6rem, 140%);
 		}
 	}

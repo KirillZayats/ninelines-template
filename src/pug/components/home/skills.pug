@@ -15,11 +15,11 @@ article.skills#skills-part
 		]
 	).container-lines__line--2
 	.skills-container
-		h2.skills__title
+		h2.skills__title.title--visible.hidden-right
 			!= data.home.skills.title
 		ul.skills__list
 			each item, key in data.home.skills.list
-				li.list__item
+				li.list__item.block-text--visible.hidden-up
 					h4.list__title
 						!= item.name
 					p.list__text

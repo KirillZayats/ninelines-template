@@ -32,10 +32,6 @@ html {
 	}
 }
 
-.no-scroll {
-	overflow: hidden;
-}
-
 body {
 	position: relative;
 	-webkit-font-smoothing: antialiased;
@@ -44,6 +40,24 @@ body {
 	text-size-adjust: 100%;
 	-webkit-tap-highlight-color: transparent;
 	background: $color-low-gray;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+	display: none;
+}
+
+.no-scroll {
+	overflow: hidden;
+}
+
+.title--visible {
+	@include visible(0.7);
+}
+
+.block-text--visible {
+	@include visible(0.5);
 }
 
 main {

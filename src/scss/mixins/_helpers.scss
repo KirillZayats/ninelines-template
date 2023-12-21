@@ -108,6 +108,17 @@
 	object-fit: cover;
 }
 
+@mixin hoverPointer {
+	@media (hover: hover) and (pointer: fine) {
+		@content;
+	}
+}
+
+@mixin visible($second) {
+	opacity: 1;
+	transition: all $second * 1s ease-out;
+}
+
 /* stylelint-disable */
 @mixin placeholder {
 	&::-webkit-input-placeholder {

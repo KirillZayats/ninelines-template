@@ -3,6 +3,8 @@ import './helpers';
 import './components/social';
 import './components/burgerMenu';
 import './components/scrollIndicator';
+import './components/listNav';
+import './components/home';
 import {ieFix} from './vendor/ie-fix';
 import {vhFix} from './vendor/vh-fix';
 import {actualYear} from './modules/actualYear';

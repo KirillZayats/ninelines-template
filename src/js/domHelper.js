@@ -7,6 +7,10 @@ export default class DOM {
 		element.setAttribute(nameAttr, valueAttr);
 	};
 
+	static getAttr = (element, nameAttr) => {
+		return element.getAttribute(nameAttr);
+	};
+
 	static html = (element, value) => {
 		element.innerHTML = value;
 	};

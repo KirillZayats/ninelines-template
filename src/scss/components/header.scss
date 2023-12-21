@@ -7,13 +7,22 @@
 	top: 0;
 	z-index: 4;
 
+	&__container {
+		position: relative;
+	}
+
 	&__menu {
 		transition: all 0.5s ease-out;
 
 		@include mobile {
+			@include df-column;
+
 			position: fixed;
 			left: 100%;
 			top: 0;
+			justify-content: space-between;
+			overflow-x: hidden;
+			overflow-y: scroll;
 			padding: 60px 40px;
 			width: calc(100%);
 			height: 100vh;
@@ -28,6 +37,7 @@
 
 		@include desktop {
 			position: static;
+			overflow: visible;
 			padding: 0;
 			width: auto;
 			height: auto;
@@ -41,6 +51,10 @@
 		position: relative;
 		z-index: 7;
 
+		.list__item {
+			position: relative;
+		}
+
 		@include mobile {
 			@include df-column;
 
@@ -49,7 +63,7 @@
 		}
 
 		@include mobileL {
-			margin: calc(50% - 153px) auto;
+			margin: 10% auto;
 		}
 
 		@include desktop {
@@ -62,6 +76,8 @@
 	}
 
 	&__link {
+		position: relative;
+		z-index: 5;
 		color: $color-black;
 
 		@include mobile {
@@ -82,33 +98,40 @@
 	}
 
 	&__line {
-		@include mobile {
-			display: none;
-		}
-
-		@include desktop {
-			@include absolute-element(130px, auto, -20px, 0, 0, calc(50% + 265px), 4);
-
-			display: block;
-		}
-
-		@include desktop-xl {
-			@include absolute-element(155px, auto, -70px, 0, 0, calc(50% - 200px), 4);
-		}
-	}
-
-	&__image-burger {
-		left: 100%;
-		bottom: 0;
+		opacity: 0;
 		transition: all 0.5s ease-out;
 
 		@include mobile {
-			position: fixed;
+			@include absolute-element(50px, 70px, -30px, 0, 0, 20px, 4);
+		}
+
+		@include mobileL {
+			@include absolute-element(90px, 120px, -70px, 0, 0, 0, 4);
+		}
+
+		@include tablet {
+			@include absolute-element(100px, 130px, -80px, 0, 0, 20px, 4);
+		}
+
+		@include desktop {
+			@include absolute-element(110px, 170px, -100px, 0, 0, -30px, 4);
+		}
+	}
+
+	&__line--active {
+		opacity: 1;
+	}
+
+	&__image-burger {
+		margin: 0 auto;
+		transition: all 0.5s ease-out;
+
+		@include mobile {
+			position: relative;
 			display: block;
-			width: auto;
+			width: 100%;
 			height: auto;
-			opacity: 0;
-			visibility: hidden;
+			max-width: 450px;
 		}
 
 		@include mobileL {
@@ -130,6 +153,7 @@
 	}
 
 	.sidebar-menu {
+		position: relative;
 		top: 0;
 		z-index: 6;
 		align-items: center;
@@ -185,17 +209,9 @@
 		visibility: visible;
 	}
 
-	input[type="checkbox"]:checked ~ &__image-burger {
-		opacity: 1;
-		visibility: visible;
-
-		@include mobile {
-			left: 0;
-		}
-
-		@include mobileL {
-			left: 50%;
-			transform: translateX(-50%);
+	@include hoverPointer {
+		.header__link:hover {
+			color: $color-red;
 		}
 	}
 

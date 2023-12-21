@@ -1,25 +1,35 @@
 header.header
-	input.sidebar-input#checked(type="checkbox")
-	label.sidebar-menu#sidebar(for="checked")
-		span.sidebar-menu__item.top
-		span.sidebar-menu__item.middle
-		span.sidebar-menu__item.bottom
-	nav.header__menu
-		ul.header__list
-			each object, key in data.header.menu
-				li
-					a.header__link.js-to-anchor(
-						href=object.url
-						data-link=key
-					)
-						!= object.name
-	+lazyPicture({
-		src: `${baseDir}images/clock.png`,
-		alt: 'clock',
-		appear: false,
-	}).header__image-burger
-	+lazyPicture({
-		src: `${baseDir}images/sprites/svg/lineHeader.svg`,
-		alt: 'line header',
-		appear: false,
-	}).header__line
+	.header__container
+		input.sidebar-input#checked(type="checkbox")
+		label.sidebar-menu#sidebar(for="checked")
+			span.sidebar-menu__item.top
+			span.sidebar-menu__item.middle
+			span.sidebar-menu__item.bottom
+		nav.header__menu
+			ul.header__list
+				each object, key in data.header.menu
+					li.list__item
+						a.header__link.js-to-anchor(
+							href=object.url
+							data-link=key
+						)
+							!= object.name
+						if key === 0
+							+lazyPicture({
+								src: `${baseDir}images/sprites/svg/lineHeader.svg`,
+								alt: 'line header',
+								appear: false,
+								dataId: key
+							}).header__line.header__line--active
+						else
+							+lazyPicture({
+								src: `${baseDir}images/sprites/svg/lineHeader.svg`,
+								alt: 'line header',
+								appear: false,
+								dataId: key
+							}).header__line
+			+lazyPicture({
+				src: `${baseDir}images/clock.png`,
+				alt: 'clock',
+				appear: false,
+			}).header__image-burger

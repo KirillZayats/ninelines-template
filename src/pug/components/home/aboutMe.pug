@@ -15,11 +15,11 @@ section.about#about-part
 		]
 	).container-lines__line--1
 	article.about__experience
-		h2.about__title
+		h2.about__title.title--visible.hidden-right
 			!= data.home.about.experiences.title
 		ul.experience__list
 			each object, key in data.home.about.experiences.data
-				li.experience-list__item
+				li.experience-list__item.block-text--visible.hidden-up
 					span.about__text--gray
 						!= object.years
 					.container-job
@@ -56,11 +56,11 @@ section.about#about-part
 			alt: data.home.about.image.name,
 		}).about__image
 	article.about__education
-		h2.about__title
+		h2.about__title.title--visible.hidden-right
 			!= data.home.about.educations.title
 		ul.education-list
 			each item, key in data.home.about.educations.data
-				li.education-list__item
+				li.education-list__item.block-text--visible.hidden-up
 					if key === 0
 						+lazyPicture({
 								src: `${baseDir}${item.icon}`,

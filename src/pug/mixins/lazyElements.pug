@@ -33,6 +33,7 @@ mixin lazyPicture(data, source)
 	picture.lozad.js-lazy(
 		data-iesrc=data.src
 		data-alt=data.alt
+		data-id=data.dataId
 	)&attributes(attributes)
 		if source
 			each object in source
