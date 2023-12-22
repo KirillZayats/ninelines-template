@@ -1,5 +1,6 @@
 import './vendor';
 import './helpers';
+import './components/preloader';
 import './components/social';
 import './components/burgerMenu';
 import './components/scrollIndicator';

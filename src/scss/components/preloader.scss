@@ -1,0 +1,48 @@
+.preloader {
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 15;
+	width: 0;
+	height: 100%;
+	background: $color-low-gray;
+	opacity: 1;
+	visibility: hidden;
+	transition: all 0.5s ease-out;
+
+	&__image {
+		position: fixed;
+
+		@include mobile {
+			left: vw(-200, $mobile);
+			bottom: vw(-200, $mobile);
+			max-width: vw(200, $mobile);
+		}
+
+		@include tablet {
+			left: vw(-250, $tablet);
+			bottom: vw(-250, $tablet);
+			max-width: vw(250, $tablet);
+		}
+
+		@include desktop {
+			left: vw(-300, $desktop);
+			bottom: vw(-300, $desktop);
+			max-width: vw(300, $desktop);
+		}
+
+		@include laptop {
+			left: vw(-590);
+			bottom: vw(-590);
+			max-width: vw(590);
+		}
+	}
+}
+
+.preloader--active {
+	position: fixed;
+	z-index: 15;
+	width: 100%;
+	opacity: 1;
+	visibility: visible;
+}

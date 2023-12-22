@@ -13,7 +13,7 @@ section.about#about-part
 				media: '(min-width: 426px)',
 			}
 		]
-	).container-lines__line--1
+	).container-lines__line--1.picture
 	article.about__experience
 		h2.about__title.title--visible.hidden-right
 			!= data.home.about.experiences.title
@@ -29,13 +29,13 @@ section.about#about-part
 							+lazyPicture({
 								src: `${baseDir}${object.rhombus}`,
 								alt: 'rhombus',
-							})
+							}).picture
 					.container-job
 						if object.icon
 							+lazyPicture({
 								src: `${baseDir}${object.icon}`,
 								alt: object.name,
-							})
+							}).picture
 						.container-text
 							if object.name
 								span.about__text--bold
@@ -54,7 +54,7 @@ section.about#about-part
 		+lazyPicture({
 			src: `${baseDir}${data.home.about.image.link}`,
 			alt: data.home.about.image.name,
-		}).about__image
+		}).about__image.picture
 	article.about__education
 		h2.about__title.title--visible.hidden-right
 			!= data.home.about.educations.title
@@ -65,12 +65,12 @@ section.about#about-part
 						+lazyPicture({
 								src: `${baseDir}${item.icon}`,
 								alt: 'rhombus',
-						}).education-list__image--first
+						}).education-list__image--first.picture
 					else
 						+lazyPicture({
 								src: `${baseDir}${item.icon}`,
 								alt: 'rhombus',
-						}).education-list__image
+						}).education-list__image.picture
 					span.about__text--bold.education__text
 						!= item.name
 					ul.education-list-type
