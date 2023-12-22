@@ -64,17 +64,3 @@
 	height: 1px;
 	clip: rect(0 0 0 0);
 }
-
-/* stylelint-disable */
-.dont-break-out {
-	// Технически это одно и то же, но используйте и то, и другое
-	overflow-wrap: break-word;
-	word-wrap: break-word;
-	// Это самое опасное в WebKit, так как оно ломает вещи везде, где бы они ни были
-	word-break: break-all;
-	// Вместо этого используйте этот нестандартный:
-	word-break: break-word;
-	// Добавляет дефис там, где слово ломается, если поддерживается
-	hyphens: auto;
-}
-/* stylelint-enable */

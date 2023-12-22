@@ -15,6 +15,10 @@ export default class DOM {
 		element.innerHTML = value;
 	};
 
+	static getInnerHTML = (element) => {
+		return element.innerHTML;
+	};
+
 	static htmlClear = (element) => {
 		element.innerHTML = ' ';
 	};

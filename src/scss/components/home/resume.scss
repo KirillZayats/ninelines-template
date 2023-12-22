@@ -23,6 +23,10 @@
 		}
 	}
 
+	.low-index {
+		z-index: -1;
+	}
+
 	&__logotype {
 		.logotype__picture {
 			display: block;
@@ -114,12 +118,24 @@
 	}
 
 	.social-icons {
+		.icon-social {
+			transition: all 0.4s ease-out;
+			cursor: pointer;
+		}
+
 		@include mobile {
 			max-width: 115px;
 		}
 
 		@include desktop-xl {
 			max-width: 150px;
+		}
+
+		@include hoverPointer {
+			rect:hover + path,
+			path:hover {
+				fill: $color-red;
+			}
 		}
 	}
 

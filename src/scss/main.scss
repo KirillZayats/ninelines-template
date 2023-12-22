@@ -8,13 +8,12 @@
 @import "vendor";
 @import "base";
 @import "helpers";
-
 @import "animations/hidden";
 @import "components/header";
 @import "components/home/resume";
 @import "components/home/aboutMe";
 @import "components/home/skills";
-@import "pages/home";
-@import "components/footer";
 @import "components/scrollIndicator";
 @import "components/share.scss";
+@import "pages/home";
+@import "components/footer";

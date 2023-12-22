@@ -7,6 +7,7 @@
 	height: 100%;
 	background: $color-black;
 	opacity: 0;
+	transition: all 0.4s ease-out;
 }
 
 .share-bg--active {
@@ -28,6 +29,7 @@
 	height: 100%;
 	opacity: 0;
 	visibility: hidden;
+	transition: all 0.4s ease-out;
 	scale: 0;
 }
 
@@ -35,8 +37,6 @@
 	left: 0;
 	top: 0;
 	z-index: 10;
-
-	// position: fixed;
 	opacity: 1;
 	visibility: visible;
 	scale: 1;
@@ -47,8 +47,8 @@
 
 	position: absolute;
 	z-index: 10;
+	justify-content: space-between;
 	margin: 16px;
-	padding: 50px;
 	width: 100%;
 	color: $color-black;
 	background: $color-low-gray;
@@ -56,7 +56,6 @@
 	&-content {
 		@include df-column;
 
-		max-width: 560px;
 		gap: 30px;
 
 		&__title {
@@ -90,6 +89,22 @@
 			@include font(400, 1.4rem, 140%);
 		}
 
+		@include mobile {
+			width: 100%;
+		}
+
+		@include desktop {
+			max-width: vw(370, $desktop);
+		}
+
+		@include laptop {
+			max-width: vw(560);
+		}
+
+		@include desktop-xl {
+			max-width: 580px;
+		}
+
 		@include hoverPointer {
 			&__button:hover {
 				background: $color-gray;
@@ -102,15 +117,59 @@
 
 		&__picture {
 			position: absolute;
-			left: -40px;
-			top: 50px;
-			width: 400px;
-			height: 400px;
+
+			@include mobile {
+				display: none;
+			}
+
+			@include desktop {
+				left: -80px;
+				top: 100px;
+				display: block;
+				width: 340px;
+				height: 340px;
+			}
+
+			@include laptop {
+				left: -140px;
+				top: 50px;
+				width: 400px;
+				height: 400px;
+			}
+		}
+
+		@include mobile {
+			display: none;
+		}
+
+		@include desktop {
+			display: block;
+			min-width: 200px;
 		}
 	}
 
+	@include mobile {
+		padding: 15px;
+		max-width: calc(100% - 30px);
+	}
+
+	@include mobileL {
+		padding: 30px;
+		max-width: calc(100% - 60px);
+	}
+
+	@include tablet {
+		max-width: vw(600, $tablet);
+	}
+
 	@include desktop {
+		padding: 50px;
 		min-height: 504px;
 		max-width: vw(968);
+	}
+
+	@include desktop-xl {
+		min-height: 504px;
+		max-width: 1000px;
 	}
 }

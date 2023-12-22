@@ -277,6 +277,10 @@
 		}
 	}
 
+	.low-index {
+		z-index: -1;
+	}
+
 	@include mobile {
 		@include df-column;
 
