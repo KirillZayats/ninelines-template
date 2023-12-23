@@ -1,5 +1,7 @@
 import DOM from '../domHelper';
 import {body} from './burgerMenu';
+import {initFooter} from './footer';
+import {initHome} from './home';
 
 const rocket = DOM.search('.preloader__image');
 const containerRocket = DOM.search('.preloader');
@@ -28,6 +30,8 @@ const moveRocket = (lengthArray) => {
 	} else {
 		DOM.removeClass(containerRocket, classActive);
 		DOM.toggleScroll(body);
+		initHome();
+		initFooter();
 	}
 };
 
@@ -43,7 +47,7 @@ window.addEventListener('load', () => {
 	DOM.toggleScroll(body);
 	moveRocket(images.length);
 
-	let startTime = widthRocket >= 500 ? 100 : 150;
+	let startTime = window.innerWidth > 1024 ? 100 : 150;
 	let time = startTime;
 	images.forEach((element, index) => {
 		if (element.complete) {

@@ -1,5 +1,5 @@
 import DOM from '../domHelper';
-// import html2canvas from "html2canvas";
+import html2canvas from 'html2canvas';
 
 const shareBg = DOM.search('.share-bg');
 const shareField = DOM.search('.share-field');
@@ -50,7 +50,7 @@ const getValidSocial = (index) => {
 };
 
 const shareFacebook = (valueName, valueDescription) => {
-	return `https://www.facebook.com/sharer/sharer.php?href=${encodeURIComponent(
+	return `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
 		window.location.href,
 	)}&quote=${encodeURIComponent(valueName)}
     &picture=${encodeURIComponent('https://placehold.co/400')}
@@ -97,13 +97,20 @@ const shareContent = () => {
 	window.open(shareUrl, '_blank');
 };
 
+const setImageMeta = (selector, valueImage) => {
+	const meta = DOM.search(selector);
+	DOM.attr(meta, 'content', valueImage);
+};
+
 // функция для получения изображения через html2canvas
 const shareDynamicContent = () => {
-	// const dynamicContent = DOM.searchById("share-dynamic");
-	// html2canvas(dynamicContent).then((canvas) => {
-	// 	// const valueImage = canvas.toDataURL("image/png"); //url полученой картинки
-	// });
-	shareContent();
+	const dynamicContent = DOM.searchById('share-dynamic');
+	html2canvas(dynamicContent).then((canvas) => {
+		const valueImage = canvas.toDataURL('image/png'); // url полученой картинки
+		setImageMeta('meta[property="og:image"]', valueImage);
+		setImageMeta('meta[property="twitter:image"]', valueImage);
+		shareContent();
+	});
 };
 
 const initEventsShare = () => {
@@ -129,3 +136,7 @@ const initEventsShare = () => {
 };
 
 initEventsShare();
+
+export {
+	isStatusModal,
+};
