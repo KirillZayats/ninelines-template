@@ -1,6 +1,6 @@
 import DOM from '../domHelper';
+import {initScroll} from '../modules/locomotive';
 import {body} from './burgerMenu';
-import {initFooter} from './footer';
 import {initHome} from './home';
 
 const rocket = DOM.search('.preloader__image');
@@ -31,7 +31,9 @@ const moveRocket = (lengthArray) => {
 		DOM.removeClass(containerRocket, classActive);
 		DOM.toggleScroll(body);
 		initHome();
-		initFooter();
+		if (window.innerWidth >= 1025) {
+			initScroll();
+		}
 	}
 };
 

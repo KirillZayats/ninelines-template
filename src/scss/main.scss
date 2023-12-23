@@ -8,6 +8,7 @@
 @import "vendor";
 @import "base";
 @import "helpers";
+@import "locomotive-scroll";
 @import "components/preloader";
 @import "animations/hidden";
 @import "components/header";
@@ -16,5 +17,5 @@
 @import "components/home/skills";
 @import "components/scrollIndicator";
 @import "components/share.scss";
+@import "components/home/love";
 @import "pages/home";
-@import "components/footer";

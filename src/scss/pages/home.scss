@@ -72,26 +72,22 @@
 	}
 
 	@include mobile {
-		padding: 15px 20px 40px;
+		padding: 15px 20px 0;
 		gap: 40px;
 	}
 
 	@include mobileL {
-		padding: 40px;
+		padding: 40px 40px 0;
 	}
 
 	@include desktop {
-		padding: 94px vw(150) 100px;
+		padding: 0 vw(150);
 		gap: 200px;
-	}
-
-	@include laptop {
-		padding: 94px vw(150) 200px;
 	}
 
 	@include desktop-xl {
 		margin: 0 auto;
-		padding: 110px 150px 200px;
+		padding: 0 150px;
 		max-width: $desktop-xl * 1px;
 	}
 }

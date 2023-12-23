@@ -1,4 +1,7 @@
-const initObserver = (callback, args, isStatus = true) => {
+import DOM from '../domHelper';
+import {scrollLocomotive} from './locomotive';
+
+const initObserver = (callback, args, threshold, isStatus = true) => {
 	return new IntersectionObserver(
 		(entries, observer) => {
 			entries.forEach((entry) => {
@@ -10,7 +13,12 @@ const initObserver = (callback, args, isStatus = true) => {
 				}
 			});
 		},
-		{threshold: 0.5},
+		{threshold},
 	);
 };
-export {initObserver};
+
+const initObserverUpdate = () => {
+	new ResizeObserver(() => scrollLocomotive && scrollLocomotive.update()).observe(DOM.search('[data-scroll-container]'));
+};
+
+export {initObserver, initObserverUpdate};

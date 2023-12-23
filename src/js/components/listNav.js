@@ -12,6 +12,19 @@ const listMainBlocks = [
 	DOM.searchById('skills-part'),
 ];
 
+const getHeightHeader = () => {
+	let width = window.innerWidth;
+	if (width >= 1800) {
+		return 122;
+	} else if (width >= 1440) {
+		return 134;
+	} else if (width > 1024) {
+		return 74;
+	}
+
+	return -50;
+};
+
 const getIndexByIdData = (elements, attr, value) => {
 	let item;
 	for (let index = 0; index < elements.length; index++) {
@@ -55,7 +68,12 @@ listMainBlocks.forEach((element, index) => {
 	let observer = initObserver(
 		initClass,
 		[navLines, nameActiveLine, index],
+		0.5,
 		false,
 	);
 	observer.observe(element);
 });
+
+export {
+	getHeightHeader,
+};

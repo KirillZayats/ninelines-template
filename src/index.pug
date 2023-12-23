@@ -6,8 +6,8 @@ block content
 	.site
 		include pug/components/preloader
 		include pug/components/header
-		include pug/pages/home
-		include pug/components/footer
+		main.content(data-scroll-container)
+			include pug/pages/home
 		include pug/components/scrollIndicator
 		include pug/components/share
 	include pug/components/analytics

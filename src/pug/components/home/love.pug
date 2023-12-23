@@ -1,0 +1,13 @@
+section.love
+	.love__container
+		each image, key in data.love.images
+			if key === 0
+				+lazyPicture({
+					src: `${baseDir}${image.url}`,
+					alt: image.alt,
+				}).love__picture.image--visible.hidder-image__left.picture
+			else
+				+lazyPicture({
+					src: `${baseDir}${image.url}`,
+					alt: image.alt,
+				}).love__picture.image--visible.hidder-image__right.picture

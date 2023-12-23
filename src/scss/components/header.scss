@@ -1,10 +1,6 @@
 .header {
 	@include df-row;
 
-	position: fixed;
-	left: 0;
-	right: 0;
-	top: 0;
 	z-index: 4;
 
 	&__container {
@@ -45,6 +41,10 @@
 			opacity: 1;
 			visibility: visible;
 		}
+	}
+
+	&__menu::-webkit-scrollbar {
+		display: none;
 	}
 
 	&__list {
@@ -216,6 +216,10 @@
 	}
 
 	@include mobile {
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 0;
 		justify-content: flex-end;
 		padding: 25px 20px 15px;
 		background-image:
@@ -242,6 +246,7 @@
 	}
 
 	@include desktop {
+		position: static;
 		padding: 50px 150px 5px;
 		background-color: $color-low-gray;
 	}
@@ -254,6 +259,7 @@
 		justify-content: center;
 		margin: 0 auto;
 		padding: 80px 150px 15px;
+		width: 100%;
 		max-width: $desktop-xl * 1px;
 	}
 }

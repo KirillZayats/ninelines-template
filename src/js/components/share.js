@@ -1,5 +1,6 @@
 import DOM from '../domHelper';
 import html2canvas from 'html2canvas';
+import {scrollLocomotive} from '../modules/locomotive';
 
 const shareBg = DOM.search('.share-bg');
 const shareField = DOM.search('.share-field');
@@ -32,12 +33,18 @@ const toggleModal = () => {
 const toggleShare = () => {
 	if (isStatusModal) {
 		isStatusModal = false;
+		if (scrollLocomotive) {
+			scrollLocomotive.start();
+		}
 		toggleModal();
 		setTimeout(() => {
 			setLowIndex();
 		}, 500);
 	} else {
 		isStatusModal = true;
+		if (scrollLocomotive) {
+			scrollLocomotive.stop();
+		}
 		setLowIndex();
 		setTimeout(() => {
 			toggleModal();
