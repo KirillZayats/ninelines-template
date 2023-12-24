@@ -56,31 +56,31 @@ const getValidSocial = (index) => {
 	validSocial = Math.floor(index / 2);
 };
 
-const shareFacebook = (valueName, valueDescription) => {
+const shareFacebook = (valueName, valueDescription, imageUrl) => {
 	return `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
 		window.location.href,
 	)}&quote=${encodeURIComponent(valueName)}
-    &picture=${encodeURIComponent('https://placehold.co/400')}
+    &picture=${encodeURIComponent(imageUrl)}
     &description=${encodeURIComponent(valueDescription)}`;
 };
 
-const shareVk = (valueName, valueDescription) => {
+const shareVk = (valueName, valueDescription, imageUrl) => {
 	return `https://vk.com/share.php?url=${encodeURIComponent(
 		window.location.href,
 	)}&title=${encodeURIComponent(valueName)}&description=${encodeURIComponent(
 		valueDescription,
-	)}&image=${encodeURIComponent('https://placehold.co/400')}&noparse=true`;
+	)}&image=${encodeURIComponent(imageUrl)}&noparse=true`;
 };
 
-const shareTg = (valueName, valueDescription) => {
+const shareTg = (valueName, valueDescription, imageUrl) => {
 	return `https://telegram.me/share/url?url=${encodeURIComponent(
 		window.location.href,
 	)}&text=${encodeURIComponent(
 		`Имя: ${valueName}, Должность: ${valueDescription}`,
-	)}&photo=${encodeURIComponent('https://placehold.co/400')}`;
+	)}&photo=${encodeURIComponent(imageUrl)}`;
 };
 
-const shareContent = () => {
+const shareContent = (imageUrl) => {
 	const valueName = DOM.getInnerHTML(
 		DOM.search('.share-content__title--name'),
 	).split(',')[0];
@@ -90,13 +90,13 @@ const shareContent = () => {
 	let shareUrl;
 	switch (validSocial) {
 		case 0:
-			shareUrl = shareFacebook(valueName, valueDescription);
+			shareUrl = shareFacebook(valueName, valueDescription, imageUrl);
 			break;
 		case 1:
-			shareUrl = shareVk(valueName, valueDescription);
+			shareUrl = shareVk(valueName, valueDescription, imageUrl);
 			break;
 		case 2:
-			shareUrl = shareTg(valueName, valueDescription);
+			shareUrl = shareTg(valueName, valueDescription, imageUrl);
 			break;
 		default:
 			break;
@@ -116,7 +116,7 @@ const shareDynamicContent = () => {
 		const valueImage = canvas.toDataURL('image/png'); // url полученой картинки
 		setImageMeta('metaOg', valueImage);
 		setImageMeta('metaTwitter', valueImage);
-		shareContent();
+		shareContent(valueImage);
 	});
 };
 
