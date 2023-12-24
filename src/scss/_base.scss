@@ -59,6 +59,7 @@ body::-webkit-scrollbar {
 	@include desktop {
 		opacity: 0;
 		transform: translateX(-200px);
+		transition: all 0.5s ease-out;
 	}
 }
 
@@ -66,6 +67,7 @@ body::-webkit-scrollbar {
 	@include desktop {
 		opacity: 0;
 		transform: translateY(40px);
+		transition: all 0.5s ease-out;
 	}
 }
 
@@ -74,6 +76,7 @@ body::-webkit-scrollbar {
 		opacity: 0;
 		transform: rotate(-45deg);
 		transform-origin: right bottom;
+		transition: all 0.5s ease-out;
 		scale: 0.5;
 	}
 }
@@ -83,11 +86,21 @@ body::-webkit-scrollbar {
 		opacity: 0;
 		transform: rotate(45deg);
 		transform-origin: left bottom;
+		transition: all 0.5s ease-out;
 		scale: 0.5;
 	}
 }
 
-.active-up {
+.block-down--hidden {
+	@include desktop {
+		opacity: 0;
+		transform: translateY(-100px);
+		transition: all 0.5s ease-out;
+	}
+}
+
+.active-up,
+.active-down {
 	@include visible(0.5);
 
 	transform: translateY(0);
@@ -111,12 +124,9 @@ body::-webkit-scrollbar {
 	@include visible(0.7);
 }
 
-.image--visible {
-	@include visible(0.6);
-}
-
+.image--visible,
 .block-text--visible {
-	@include visible(0.5);
+	@include visible(0.6);
 }
 
 main {
@@ -155,6 +165,12 @@ picture {
 
 	img {
 		width: 100%;
+	}
+}
+
+.picture--animation {
+	@include desktop {
+		@include animation-move;
 	}
 }
 

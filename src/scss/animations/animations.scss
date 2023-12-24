@@ -14,7 +14,7 @@
 .hidden-up {
 	@include desktop {
 		opacity: 0;
-		transform: translateY(20px);
+		transform: translateY(40px);
 	}
 }
 

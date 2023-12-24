@@ -1,0 +1,19 @@
+@mixin animation-move {
+	animation-name: animation-scale;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes animation-scale {
+	0% {
+		scale: 1;
+	}
+
+	50% {
+		scale: 0.9;
+	}
+
+	100% {
+		scale: 1;
+	}
+}

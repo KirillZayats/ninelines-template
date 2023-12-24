@@ -3,15 +3,18 @@ import {removeScroll, scrollIndicator} from '../components/scrollIndicator';
 import {initObserverUpdate} from './observer';
 import DOM from '../domHelper';
 
-let scrollLocomotive;
-let isResize = window.innerWidth > 1024;
 const header = DOM.search('.header');
+let scrollLocomotive;
+let widthDesktop = 1025;
+let isResize = window.innerWidth >= widthDesktop;
+let currentY;
 
 const initEvents = () => {
 	scrollLocomotive.on('scroll', (object) => {
-		scrollIndicator(object.scroll.y);
+		currentY = object.scroll.y;
+		scrollIndicator(currentY);
 		removeScroll();
-		header.style.transform = `translate3d(0, ${object.scroll.y}px, 0)`;
+		header.style.transform = `translate3d(0, ${currentY}px, 0)`;
 	});
 };
 
@@ -20,15 +23,16 @@ const initScroll = () => {
 		el: document.querySelector('[data-scroll-container]'),
 		smooth: true,
 		multiplier: 0.6,
-		lerp: 0.1,
+		lerp: 0.06,
 		reloadOnContextChange: true,
+		repeat: true,
 	});
 	initEvents();
 	initObserverUpdate();
 };
 
 window.addEventListener('resize', () => {
-	if (window.innerWidth >= 1025) {
+	if (window.innerWidth >= widthDesktop) {
 		isResize = true;
 		if (!scrollLocomotive) {
 			initScroll();

@@ -15,11 +15,11 @@ article.skills#skills-part
 		]
 	).container-lines__line--2.picture
 	.skills-container
-		h2.skills__title.title--hidden(data-scroll-class="active-right" data-scroll-offset="100" data-scroll)
+		h2.skills__title.title--hidden(data-scroll-class="active-right" data-scroll-offset="100, 100" data-scroll)
 			!= data.home.skills.title
 		ul.skills__list
 			each item, key in data.home.skills.list
-				li.list__item.block-text--hidden(data-scroll-class="active-up" data-scroll-offset="100" data-scroll)
+				li.list__item.block-text--hidden(data-scroll-class="active-up" data-scroll-offset="100, 100" data-scroll)
 					h4.list__title
 						!= item.name
 					p.list__text
