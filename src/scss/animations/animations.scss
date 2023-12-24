@@ -1,3 +1,16 @@
+.title--visible,
+.block-left--visible {
+	@include visible(0.7);
+}
+
+.image--visible {
+	@include visible(0.6);
+}
+
+.block-text--visible {
+	@include visible(0.5);
+}
+
 .hidden-up {
 	@include desktop {
 		opacity: 0;
@@ -7,6 +20,11 @@
 
 .hidden-right {
 	@include desktop {
+		opacity: 0;
+		transform: translateX(-100px);
+	}
+
+	@include laptop {
 		opacity: 0;
 		transform: translateX(-200px);
 	}

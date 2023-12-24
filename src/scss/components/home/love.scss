@@ -36,14 +36,7 @@
 
 	@include desktop {
 		margin: 0 auto;
-		padding-bottom: 125px;
-	}
-
-	@include laptop {
-		padding-bottom: 180px;
-	}
-
-	@include desktop-xl {
-		padding-bottom: 172px;
+		padding-bottom: 50px;
+		min-height: 200px;
 	}
 }

@@ -233,7 +233,6 @@
 	&__image {
 		display: block;
 		opacity: 0;
-		transition: $duration-normal;
 
 		&[data-loaded="true"] {
 			opacity: 1;

@@ -8,8 +8,8 @@ const nameActiveLine = 'header__line--active';
 
 const listMainBlocks = [
 	DOM.searchById('resume-part'),
-	DOM.searchById('about-part'),
-	DOM.searchById('skills-part'),
+	// DOM.searchById('about-part'),
+	// DOM.searchById('skills-part'),
 ];
 
 const getHeightHeader = () => {

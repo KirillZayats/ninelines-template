@@ -5,9 +5,9 @@ section.love
 				+lazyPicture({
 					src: `${baseDir}${image.url}`,
 					alt: image.alt,
-				}).love__picture.image--visible.hidder-image__left.picture
+				}).love__picture.image-hidden--left(data-scroll-class="active-image" data-scroll)
 			else
 				+lazyPicture({
 					src: `${baseDir}${image.url}`,
 					alt: image.alt,
-				}).love__picture.image--visible.hidder-image__right.picture
+				}).love__picture.image-hidden--right(data-scroll-class="active-image" data-scroll)

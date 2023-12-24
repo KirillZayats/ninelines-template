@@ -15,11 +15,11 @@ section.about#about-part
 		]
 	).container-lines__line--1.picture
 	article.about__experience
-		h2.about__title.title--visible.hidden-right
+		h2.about__title.title--hidden(data-scroll-class="active-right" data-scroll-offset="200" data-scroll)
 			!= data.home.about.experiences.title
 		ul.experience__list
 			each object, key in data.home.about.experiences.data
-				li.experience-list__item.block-text--visible.hidden-up
+				li.experience-list__item.block-text--hidden(data-scroll-class="active-up" data-scroll-offset="200" data-scroll)
 					span.about__text--gray
 						!= object.years
 					.container-job
@@ -50,17 +50,17 @@ section.about#about-part
 								li.additional-links__item
 									span.about__link
 										!= link.name
-	.about__container-image
+	.about__container-image(data-scroll)
 		+lazyPicture({
 			src: `${baseDir}${data.home.about.image.link}`,
 			alt: data.home.about.image.name,
-		}).about__image.picture
+		}).about__image.picture(data-scroll-offset="-150, 150" data-scroll-target=".about__container-image" data-scroll-sticky data-scroll)
 	article.about__education
-		h2.about__title.title--visible.hidden-right
+		h2.about__title.title--hidden(data-scroll-class="active-right" data-scroll-offset="200" data-scroll)
 			!= data.home.about.educations.title
 		ul.education-list
 			each item, key in data.home.about.educations.data
-				li.education-list__item.block-text--visible.hidden-up
+				li.education-list__item.block-text--hidden(data-scroll-class="active-up" data-scroll-offset="200" data-scroll)
 					if key === 0
 						+lazyPicture({
 								src: `${baseDir}${item.icon}`,

@@ -55,13 +55,64 @@ body::-webkit-scrollbar {
 	overflow: hidden;
 }
 
-.image--visible {
+.title--hidden {
+	@include desktop {
+		opacity: 0;
+		transform: translateX(-200px);
+	}
+}
+
+.block-text--hidden {
+	@include desktop {
+		opacity: 0;
+		transform: translateY(40px);
+	}
+}
+
+.image-hidden--left {
+	@include desktop {
+		opacity: 0;
+		transform: rotate(-45deg);
+		transform-origin: right bottom;
+		scale: 0.5;
+	}
+}
+
+.image-hidden--right {
+	@include desktop {
+		opacity: 0;
+		transform: rotate(45deg);
+		transform-origin: left bottom;
+		scale: 0.5;
+	}
+}
+
+.active-up {
+	@include visible(0.5);
+
+	transform: translateY(0);
+}
+
+.active-right {
+	@include visible(1);
+
+	transform: translateX(0);
+}
+
+.active-image {
 	@include visible(0.6);
+
+	transform: rotate(0);
+	scale: 1;
 }
 
 .title--visible,
 .block-left--visible {
 	@include visible(0.7);
+}
+
+.image--visible {
+	@include visible(0.6);
 }
 
 .block-text--visible {
@@ -169,18 +220,14 @@ iframe {
 	max-height: 50vh;
 }
 
-.container {
-	position: relative;
-	z-index: 1;
-	margin: 0 auto;
-	width: 100%;
-	max-width: 100%;
-}
-
 .site {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh; // fallback
 	// stylelint-disable-next-line
 	min-height: var(--vh);
+
+	&__content {
+		position: relative;
+	}
 }

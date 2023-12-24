@@ -1,14 +1,17 @@
 import LocomotiveScroll from 'locomotive-scroll';
 import {removeScroll, scrollIndicator} from '../components/scrollIndicator';
 import {initObserverUpdate} from './observer';
+import DOM from '../domHelper';
 
 let scrollLocomotive;
 let isResize = window.innerWidth > 1024;
+const header = DOM.search('.header');
 
 const initEvents = () => {
 	scrollLocomotive.on('scroll', (object) => {
 		scrollIndicator(object.scroll.y);
 		removeScroll();
+		header.style.transform = `translate3d(0, ${object.scroll.y}px, 0)`;
 	});
 };
 
@@ -16,7 +19,9 @@ const initScroll = () => {
 	scrollLocomotive = new LocomotiveScroll({
 		el: document.querySelector('[data-scroll-container]'),
 		smooth: true,
-		scrollFromAnywhere: true,
+		multiplier: 0.6,
+		lerp: 0.1,
+		reloadOnContextChange: true,
 	});
 	initEvents();
 	initObserverUpdate();
@@ -34,9 +39,6 @@ window.addEventListener('resize', () => {
 		isResize = false;
 		scrollLocomotive.scrollTo('top');
 		window.scrollTo(0, 0);
-		// setTimeout(() => {
-		// 	scrollLocomotive && scrollLocomotive.destroy();
-		// }, 500);
 	}
 });
 

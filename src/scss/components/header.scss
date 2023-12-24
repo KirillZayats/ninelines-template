@@ -1,7 +1,8 @@
 .header {
 	@include df-row;
 
-	z-index: 4;
+	position: fixed;
+	z-index: 7;
 
 	&__container {
 		position: relative;
@@ -246,19 +247,19 @@
 	}
 
 	@include desktop {
-		position: static;
-		padding: 50px 150px 5px;
+		padding: 50px 150px 0;
 		background-color: $color-low-gray;
+		transform: translate3d(0, 0, 0);
 	}
 
 	@include laptop {
-		padding: 101px 150px 5px;
+		padding: 101px 150px 0;
 	}
 
 	@include desktop-xl {
 		justify-content: center;
 		margin: 0 auto;
-		padding: 80px 150px 15px;
+		padding: 80px 150px 0;
 		width: 100%;
 		max-width: $desktop-xl * 1px;
 	}
