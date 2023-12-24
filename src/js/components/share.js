@@ -75,12 +75,14 @@ const shareTg = (valueName, valueDescription) => {
 	return `https://telegram.me/share/url?url=${encodeURIComponent(
 		window.location.href,
 	)}&text=${encodeURIComponent(
-		`Имя: ${valueName}, Должность: ${valueDescription}`,
-	)}`;
+		`Имя: ${valueName}, Должность: ${valueDescription}`)}`;
 };
 
 const shareContent = () => {
-	const valueName = DOM.getInnerHTML(DOM.search('.share-content__title--name'));
+	const valueName = DOM.getInnerHTML(
+		DOM.search('.share-content__title--name'),
+	).split(',')[0];
+	console.log(valueName);
 	const valueDescription = DOM.getInnerHTML(
 		DOM.search('.share-content__title--position'),
 	);
