@@ -636,28 +636,28 @@ var toggleShare = function toggleShare() {
 var getValidSocial = function getValidSocial(index) {
   validSocial = Math.floor(index / 2);
 };
-var shareFacebook = function shareFacebook(valueName, valueDescription, imageUrl) {
-  return "https://www.facebook.com/sharer/sharer.php?u=".concat(encodeURIComponent(window.location.href), "&quote=").concat(encodeURIComponent(valueName), "\n    &picture=").concat(encodeURIComponent(imageUrl), "\n    &description=").concat(encodeURIComponent(valueDescription));
+var shareFacebook = function shareFacebook(valueName, valueDescription) {
+  return "https://www.facebook.com/sharer/sharer.php?u=".concat(encodeURIComponent(window.location.href), "&quote=").concat(encodeURIComponent(valueName), "\n    &description=").concat(encodeURIComponent(valueDescription));
 };
-var shareVk = function shareVk(valueName, valueDescription, imageUrl) {
-  return "https://vk.com/share.php?url=".concat(encodeURIComponent(window.location.href), "&title=").concat(encodeURIComponent(valueName), "&description=").concat(encodeURIComponent(valueDescription), "&image=").concat(encodeURIComponent(imageUrl), "&noparse=true");
+var shareVk = function shareVk(valueName, valueDescription) {
+  return "https://vk.com/share.php?url=".concat(encodeURIComponent(window.location.href), "&title=").concat(encodeURIComponent(valueName), "&description=").concat(encodeURIComponent(valueDescription));
 };
-var shareTg = function shareTg(valueName, valueDescription, imageUrl) {
-  return "https://telegram.me/share/url?url=".concat(encodeURIComponent(window.location.href), "&text=").concat(encodeURIComponent("\u0418\u043C\u044F: ".concat(valueName, ", \u0414\u043E\u043B\u0436\u043D\u043E\u0441\u0442\u044C: ").concat(valueDescription)), "&photo=").concat(encodeURIComponent(imageUrl));
+var shareTg = function shareTg(valueName, valueDescription) {
+  return "https://telegram.me/share/url?url=".concat(encodeURIComponent(window.location.href), "&text=").concat(encodeURIComponent("\u0418\u043C\u044F: ".concat(valueName, ", \u0414\u043E\u043B\u0436\u043D\u043E\u0441\u0442\u044C: ").concat(valueDescription)));
 };
-var shareContent = function shareContent(imageUrl) {
-  var valueName = _domHelper__WEBPACK_IMPORTED_MODULE_0__["default"].getInnerHTML(_domHelper__WEBPACK_IMPORTED_MODULE_0__["default"].search('.share-content__title--name')).split(',')[0];
+var shareContent = function shareContent() {
+  var valueName = _domHelper__WEBPACK_IMPORTED_MODULE_0__["default"].getInnerHTML(_domHelper__WEBPACK_IMPORTED_MODULE_0__["default"].search('.share-content__title--name'));
   var valueDescription = _domHelper__WEBPACK_IMPORTED_MODULE_0__["default"].getInnerHTML(_domHelper__WEBPACK_IMPORTED_MODULE_0__["default"].search('.share-content__title--position'));
   var shareUrl;
   switch (validSocial) {
     case 0:
-      shareUrl = shareFacebook(valueName, valueDescription, imageUrl);
+      shareUrl = shareFacebook(valueName, valueDescription);
       break;
     case 1:
-      shareUrl = shareVk(valueName, valueDescription, imageUrl);
+      shareUrl = shareVk(valueName, valueDescription);
       break;
     case 2:
-      shareUrl = shareTg(valueName, valueDescription, imageUrl);
+      shareUrl = shareTg(valueName, valueDescription);
       break;
     default:
       break;
@@ -676,7 +676,7 @@ var shareDynamicContent = function shareDynamicContent() {
     var valueImage = canvas.toDataURL('image/png'); // url полученой картинки
     setImageMeta('metaOg', valueImage);
     setImageMeta('metaTwitter', valueImage);
-    shareContent(valueImage);
+    shareContent();
   });
 };
 var initEventsShare = function initEventsShare() {
