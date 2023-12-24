@@ -646,7 +646,8 @@ var shareTg = function shareTg(valueName, valueDescription) {
   return "https://telegram.me/share/url?url=".concat(encodeURIComponent(window.location.href), "&text=").concat(encodeURIComponent("\u0418\u043C\u044F: ".concat(valueName, ", \u0414\u043E\u043B\u0436\u043D\u043E\u0441\u0442\u044C: ").concat(valueDescription)));
 };
 var shareContent = function shareContent() {
-  var valueName = _domHelper__WEBPACK_IMPORTED_MODULE_0__["default"].getInnerHTML(_domHelper__WEBPACK_IMPORTED_MODULE_0__["default"].search('.share-content__title--name'));
+  var valueName = _domHelper__WEBPACK_IMPORTED_MODULE_0__["default"].getInnerHTML(_domHelper__WEBPACK_IMPORTED_MODULE_0__["default"].search('.share-content__title--name')).split(',')[0];
+  console.log(valueName);
   var valueDescription = _domHelper__WEBPACK_IMPORTED_MODULE_0__["default"].getInnerHTML(_domHelper__WEBPACK_IMPORTED_MODULE_0__["default"].search('.share-content__title--position'));
   var shareUrl;
   switch (validSocial) {
