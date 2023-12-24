@@ -17,7 +17,7 @@
 		<title>Тест от девять линий</title>
 		<link rel="icon" href="favicon-16x16.png" sizes="16x16">
 		<link rel="icon" href="favicon-32x32.png" sizes="32x32">
-		<link rel="stylesheet" href="./css/main.css?v=1703269445762">
+		<link rel="stylesheet" href="./css/main.css?v=1703422451045">
 	</head>
 	<body>
 		<script>
@@ -27,310 +27,312 @@
 		</script>
 		<div class="site">
 			<div class="preloader preloader--active"><img class="preloader__image" src="./images/loader.png" alt="loader"></div>
-			<header class="header">
-				<div class="header__container">
-					<input class="sidebar-input" id="checked" type="checkbox">
-					<label class="sidebar-menu" id="sidebar" for="checked"><span class="sidebar-menu__item top"></span><span class="sidebar-menu__item middle"></span><span class="sidebar-menu__item bottom"></span></label>
-					<nav class="header__menu">
-						<ul class="header__list">
-							<li class="list__item"><a class="header__link js-to-anchor" href="#resume-part" data-link="0">Резюме</a>
-								<picture class="lozad js-lazy header__line header__line--active" data-iesrc="./images/sprites/svg/lineHeader.svg" data-alt="line header" data-id="0">
-									<source srcset="./images/sprites/svg/lineHeader.svg"/>
+			<div class="site__content" data-scroll-container>
+				<header class="header">
+					<div class="header__container">
+						<input class="sidebar-input" id="checked" type="checkbox">
+						<label class="sidebar-menu" id="sidebar" for="checked"><span class="sidebar-menu__item top"></span><span class="sidebar-menu__item middle"></span><span class="sidebar-menu__item bottom"></span></label>
+						<nav class="header__menu">
+							<ul class="header__list">
+								<li class="list__item"><a class="header__link js-to-anchor" href="#resume-part" data-link="0">Резюме</a>
+									<picture class="lozad js-lazy header__line header__line--active" data-iesrc="./images/sprites/svg/lineHeader.svg" data-alt="line header" data-id="0">
+										<source srcset="./images/sprites/svg/lineHeader.svg"/>
+									</picture>
+								</li>
+								<li class="list__item"><a class="header__link js-to-anchor" href="#about-part" data-link="1">О себе</a>
+									<picture class="lozad js-lazy header__line" data-iesrc="./images/sprites/svg/lineHeader.svg" data-alt="line header" data-id="1">
+										<source srcset="./images/sprites/svg/lineHeader.svg"/>
+									</picture>
+								</li>
+								<li class="list__item"><a class="header__link js-to-anchor" href="#skills-part" data-link="2">Навыки</a>
+									<picture class="lozad js-lazy header__line" data-iesrc="./images/sprites/svg/lineHeader.svg" data-alt="line header" data-id="2">
+										<source srcset="./images/sprites/svg/lineHeader.svg"/>
+									</picture>
+								</li>
+							</ul>
+							<picture class="lozad js-lazy header__image-burger" data-iesrc="./images/clock.png" data-alt="clock">
+								<source srcset="./images/clock.png"/>
+							</picture>
+						</nav>
+					</div>
+				</header>
+				<main class="home">
+					<section class="resume" id="resume-part">
+						<div class="resume__main-info">
+							<div class="resume__logotype title--visible hidden-right">
+								<picture class="lozad js-lazy logotype__picture picture" data-iesrc="./images/logotype.png" data-alt="logotype">
+									<source srcset="./images/logotype.png"/>
 								</picture>
-							</li>
-							<li class="list__item"><a class="header__link js-to-anchor" href="#about-part" data-link="1">О себе</a>
-								<picture class="lozad js-lazy header__line" data-iesrc="./images/sprites/svg/lineHeader.svg" data-alt="line header" data-id="1">
-									<source srcset="./images/sprites/svg/lineHeader.svg"/>
-								</picture>
-							</li>
-							<li class="list__item"><a class="header__link js-to-anchor" href="#skills-part" data-link="2">Навыки</a>
-								<picture class="lozad js-lazy header__line" data-iesrc="./images/sprites/svg/lineHeader.svg" data-alt="line header" data-id="2">
-									<source srcset="./images/sprites/svg/lineHeader.svg"/>
-								</picture>
-							</li>
-						</ul>
-						<picture class="lozad js-lazy header__image-burger" data-iesrc="./images/clock.png" data-alt="clock">
-							<source srcset="./images/clock.png"/>
+							</div>
+							<div class="resume__text">
+								<h1 class="resume__title title--visible hidden-right">Кирилл, <br> Front-end dev
+								</h1>
+								<p class="resume__description block-text--visible hidden-up">Как разработчик, я высоко ценю способность воплотить видение дизайнера в жизнь, что считаю очень полезным для бизнеса. Я получаю огромное удовлетворение, наблюдая за работой от идеи до дизайна, особенно когда она появляется в руках пользователя. Я считаю, что ориентированные на пользователя решения являются наиболее ценными цифровыми ресурсами будущего.
+								</p>
+							</div>
+						</div>
+						<div class="resume__social block-left--visible hidden-left">
+							<ul class="social-links">
+								<li class="social-links__item"><a href="mailto:kirill.zayats.99@mail.ru&amp;body=Добрый день.?subject=Вакансия" target="_blank">kirill.zayats.99@mail.ru</a></li>
+								<li class="social-links__item"><a href="tel:+375295304989" target="_blank">+375 (29) 530-49-89</a></li>
+								<li class="social-links__item"><a href="https://yandex.ru/maps/geo/53000117/?ll=27.727503%2C53.882847&amp;z=10.78" target="_blank">г. Минск</a></li>
+							</ul>
+							<div class="social-icons">
+								<svg xmlns="http://www.w3.org/2000/svg" width="115" height="25" viewbox="0 0 115 25" fill="none">
+									<rect class="icon-social" width="25" height="25" rx="5" fill="#282a33"></rect>
+									<path class="icon-social" d="M17.8617 15.8594L18.4317 12.1429H14.8659V9.73215C14.8659 8.71515 15.3631 7.72322 16.9602 7.72322H18.5824V4.55916C18.5824 4.55916 17.1109 4.30804 15.7046 4.30804C12.7666 4.30804 10.848 6.08844 10.848 9.31028V12.1429H7.5835V15.8594H10.848V24.8443C11.5034 24.9473 12.1739 25 12.857 25C13.54 25 14.2105 24.9473 14.8659 24.8443V15.8594H17.8617Z" fill="white"></path>
+									<rect class="icon-social" x="45" width="25" height="25" rx="5" fill="#282a33"></rect>
+									<path class="icon-social" fill-rule="evenodd" clip-rule="evenodd" d="M65.1185 8.53223C65.2387 8.15142 65.1185 7.87444 64.5862 7.87444H62.8174C62.371 7.87444 62.1649 8.11677 62.0447 8.37647C62.0447 8.37647 61.1345 10.5922 59.8638 12.029C59.4517 12.4444 59.2628 12.5829 59.0396 12.5829C58.9193 12.5829 58.7648 12.4444 58.7648 12.0636V8.51491C58.7648 8.06485 58.6274 7.85712 58.2496 7.85712H55.4677C55.193 7.85712 55.0213 8.06485 55.0213 8.27258C55.0213 8.70537 55.6566 8.80921 55.7253 10.0209V12.6522C55.7253 13.2234 55.6223 13.3273 55.3991 13.3273C54.798 13.3273 53.3384 11.0942 52.4626 8.54955C52.2909 8.04752 52.1192 7.85712 51.6727 7.85712H49.8868C49.3716 7.85712 49.2858 8.0995 49.2858 8.35915C49.2858 8.82653 49.8868 11.1808 52.0848 14.2967C53.5445 16.4259 55.6223 17.5684 57.4941 17.5684C58.6274 17.5684 58.7648 17.3087 58.7648 16.876V15.2661C58.7648 14.7467 58.8678 14.6602 59.2285 14.6602C59.486 14.6602 59.9497 14.7987 60.9972 15.82C62.1992 17.0317 62.4053 17.5857 63.075 17.5857H64.8437C65.3589 17.5857 65.5993 17.326 65.4619 16.824C65.3074 16.322 64.7235 15.595 63.968 14.7294C63.5558 14.2448 62.9376 13.7081 62.7487 13.4484C62.4911 13.1023 62.5598 12.9638 62.7487 12.6522C62.7316 12.6522 64.8952 9.57089 65.1185 8.53223Z" fill="white"></path>
+									<rect class="icon-social" x="90" width="25" height="25" rx="5" fill="#282a33"></rect>
+									<path class="icon-social" d="M95.2219 12.0884C96.7249 11.2605 98.4026 10.5695 99.9702 9.87505C102.667 8.73751 105.375 7.61969 108.11 6.57901C108.642 6.40169 109.598 6.22828 109.692 7.01685C109.64 8.13306 109.429 9.24274 109.284 10.3524C108.917 12.7927 108.492 15.2246 108.077 17.6569C107.935 18.467 106.92 18.8865 106.27 18.368C104.71 17.3138 103.137 16.2699 101.596 15.1913C101.092 14.6785 101.56 13.942 102.01 13.5758C103.296 12.3091 104.659 11.2328 105.877 9.9006C106.206 9.10704 105.235 9.77583 104.915 9.98074C103.155 11.1934 101.438 12.4801 99.5829 13.5458C98.6352 14.0675 97.5307 13.6217 96.5834 13.3306C95.7341 12.9789 94.4895 12.6247 95.2218 12.0885L95.2219 12.0884Z" fill="white"></path>
+								</svg>
+							</div>
+						</div>
+					</section>
+					<section class="about" id="about-part">
+						<picture class="lozad js-lazy container-lines__line--1 picture" data-iesrc="./images/sprites/svg/lineMain1.svg" data-alt="line main 1">
+							<source srcset="./images/sprites/svg/lineMain1m.svg" media="(min-width: 0px) and (max-width: 425px)"/>
+							<source srcset="./images/sprites/svg/lineMain1.svg" media="(min-width: 426px)"/>
+							<source srcset="./images/sprites/svg/lineMain1.svg"/>
 						</picture>
-					</nav>
-				</div>
-			</header>
-			<main class="home">
-				<section class="resume" id="resume-part">
-					<div class="resume__main-info">
-						<div class="resume__logotype title--visible hidden-right">
-							<picture class="lozad js-lazy logotype__picture picture" data-iesrc="./images/logotype.png" data-alt="logotype">
-								<source srcset="./images/logotype.png"/>
+						<article class="about__experience">
+							<h2 class="about__title title--hidden" data-scroll-class="active-right" data-scroll-offset="100, 100" data-scroll>Опыт работы
+							</h2>
+							<ul class="experience__list">
+								<li class="experience-list__item block-text--hidden" data-scroll-class="active-up" data-scroll-offset="100, 150" data-scroll><span class="about__text--gray">Июль 2019</span>
+									<div class="container-job"><span class="about__text--bold">Freelance Designer</span>
+										<picture class="lozad js-lazy picture picture--animation" data-iesrc="./images/sprites/svg/freelanceRhombus.svg" data-alt="rhombus">
+											<source srcset="./images/sprites/svg/freelanceRhombus.svg"/>
+										</picture>
+									</div>
+									<div class="container-job">
+										<div class="container-text"><span class="about__text">Netherlands, Worldwide</span>
+										</div>
+									</div>
+									<div class="container">
+										<p class="about__text about__description">Available for a project or job in UX/UI, Visual and Product design.
+										</p>
+										<ul class="container__additional-links">
+											<li class="additional-links__item"><span class="about__link">Commercial tryouts</span></li>
+											<li class="additional-links__item"><span class="about__link">Personal projects</span></li>
+										</ul>
+									</div>
+								</li>
+								<li class="experience-list__item block-text--hidden" data-scroll-class="active-up" data-scroll-offset="100, 150" data-scroll><span class="about__text--gray">Январь 2017 - Сентябрь 2018</span>
+									<div class="container-job"><span class="about__text--bold">Digital Designer</span>
+										<picture class="lozad js-lazy picture picture--animation" data-iesrc="./images/sprites/svg/jcreativeRhombus.svg" data-alt="rhombus">
+											<source srcset="./images/sprites/svg/jcreativeRhombus.svg"/>
+										</picture>
+									</div>
+									<div class="container-job">
+										<picture class="lozad js-lazy picture" data-iesrc="./images/sprites/svg/jcreative.svg" data-alt="J Creative Solutions">
+											<source srcset="./images/sprites/svg/jcreative.svg"/>
+										</picture>
+										<div class="container-text"><span class="about__text--bold">J Creative Solutions</span><span class="about__text">Digital agency in Minsk, Belarus</span>
+										</div>
+									</div>
+									<div class="container">
+										<p class="about__text about__description">Created visuals for digital marketing channels such as social media, promo web and online ads. Developed visual language from scratch or following the branding guidelines. Designed presentations<br> for clients and indoor purposes.
+										</p>
+										<ul class="container__additional-links">
+											<li class="additional-links__item"><span class="about__link">Agency projects</span></li>
+										</ul>
+									</div>
+								</li>
+								<li class="experience-list__item block-text--hidden" data-scroll-class="active-up" data-scroll-offset="100, 150" data-scroll><span class="about__text--gray">Март 2014 - Февраль 2017</span>
+									<div class="container-job"><span class="about__text--bold">SEO Specialist → Lead SEO Specialist</span>
+										<picture class="lozad js-lazy picture picture--animation" data-iesrc="./images/sprites/svg/ozRhombus.svg" data-alt="rhombus">
+											<source srcset="./images/sprites/svg/ozRhombus.svg"/>
+										</picture>
+									</div>
+									<div class="container-job">
+										<picture class="lozad js-lazy picture" data-iesrc="./images/sprites/svg/oz.svg" data-alt="OZ.by">
+											<source srcset="./images/sprites/svg/oz.svg"/>
+										</picture>
+										<div class="container-text"><span class="about__text--bold">OZ.by</span><span class="about__text">Online bookstore in Minsk, Belarus</span>
+										</div>
+									</div>
+									<div class="container">
+										<p class="about__text about__description">Improved website performance and user experience of the biggest online bookstore OZ in Belarus, being a part of the marketing team,<br> I interpreted Google Analytics data to IT, content and marketing colleagues. Advised on tech and content optimization strategy, automated processes, provided reports, increased organic traffic up to 150%.
+										</p>
+										<ul class="container__additional-links">
+											<li class="additional-links__item"><span class="about__link">Annual company report 2016</span></li>
+										</ul>
+									</div>
+								</li>
+								<li class="experience-list__item block-text--hidden" data-scroll-class="active-up" data-scroll-offset="100, 150" data-scroll><span class="about__text--gray">Август 2012 - Ноябрь 2013</span>
+									<div class="container-job"><span class="about__text--bold">Content Specialist</span>
+										<picture class="lozad js-lazy picture picture--animation" data-iesrc="./images/sprites/svg/21vekRhombus.svg" data-alt="rhombus">
+											<source srcset="./images/sprites/svg/21vekRhombus.svg"/>
+										</picture>
+									</div>
+									<div class="container-job">
+										<picture class="lozad js-lazy picture" data-iesrc="./images/sprites/svg/21vek.svg" data-alt="21vek.by">
+											<source srcset="./images/sprites/svg/21vek.svg"/>
+										</picture>
+										<div class="container-text"><span class="about__text--bold">21vek.by</span><span class="about__text">E-commerce store in Minsk, Belarus</span>
+										</div>
+									</div>
+									<div class="container">
+										<p class="about__text about__description">Added and modified the product information, prepared images and text for the website, developed categories filters, ensure all info is correct in the catalogue with the goal of improving online shopper experience.
+										</p>
+										<ul class="container__additional-links">
+										</ul>
+									</div>
+								</li>
+								<li class="experience-list__item block-text--hidden" data-scroll-class="active-up" data-scroll-offset="100, 150" data-scroll><span class="about__text--gray">Август 2011 - Ноябрь 2014</span>
+									<div class="container-job"><span class="about__text--bold">Software Support Engineer</span>
+										<picture class="lozad js-lazy picture picture--animation" data-iesrc="./images/sprites/svg/integralRhombus.svg" data-alt="rhombus">
+											<source srcset="./images/sprites/svg/integralRhombus.svg"/>
+										</picture>
+									</div>
+									<div class="container-job">
+										<picture class="lozad js-lazy picture" data-iesrc="./images/sprites/svg/integral.svg" data-alt="Integral">
+											<source srcset="./images/sprites/svg/integral.svg"/>
+										</picture>
+										<div class="container-text"><span class="about__text--bold">Integral</span><span class="about__text">Microelectronics factory in Minsk, Belarus</span>
+										</div>
+									</div>
+									<div class="container">
+										<p class="about__text about__description">Supported retail accounting system LS Trade, troubleshoot technical problems.
+										</p>
+										<ul class="container__additional-links">
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</article>
+						<div class="about__container-image" data-scroll>
+							<picture class="lozad js-lazy about__image picture" data-iesrc="./images/man.png" data-alt="Man" data-scroll-offset="-150, 150" data-scroll-target=".about__container-image" data-scroll-sticky="data-scroll-sticky" data-scroll="data-scroll">
+								<source srcset="./images/man.png"/>
 							</picture>
 						</div>
-						<div class="resume__text">
-							<h1 class="resume__title title--visible hidden-right">Кирилл, <br> Front-end dev
-							</h1>
-							<p class="resume__description block-text--visible hidden-up">Как разработчик, я высоко ценю способность воплотить видение дизайнера в жизнь, что считаю очень полезным для бизнеса. Я получаю огромное удовлетворение, наблюдая за работой от идеи до дизайна, особенно когда она появляется в руках пользователя. Я считаю, что ориентированные на пользователя решения являются наиболее ценными цифровыми ресурсами будущего.
-							</p>
-						</div>
-					</div>
-					<div class="resume__social block-left--visible hidden-left">
-						<ul class="social-links">
-							<li class="social-links__item"><a href="mailto:kirill.zayats.99@mail.ru&amp;body=Добрый день.?subject=Вакансия" target="_blank">kirill.zayats.99@mail.ru</a></li>
-							<li class="social-links__item"><a href="tel:+375295304989" target="_blank">+375 (29) 530-49-89</a></li>
-							<li class="social-links__item"><a href="https://yandex.ru/maps/geo/53000117/?ll=27.727503%2C53.882847&amp;z=10.78" target="_blank">г. Минск</a></li>
-						</ul>
-						<div class="social-icons">
-							<svg xmlns="http://www.w3.org/2000/svg" width="115" height="25" viewbox="0 0 115 25" fill="none">
-								<rect class="icon-social" width="25" height="25" rx="5" fill="#282a33"></rect>
-								<path class="icon-social" d="M17.8617 15.8594L18.4317 12.1429H14.8659V9.73215C14.8659 8.71515 15.3631 7.72322 16.9602 7.72322H18.5824V4.55916C18.5824 4.55916 17.1109 4.30804 15.7046 4.30804C12.7666 4.30804 10.848 6.08844 10.848 9.31028V12.1429H7.5835V15.8594H10.848V24.8443C11.5034 24.9473 12.1739 25 12.857 25C13.54 25 14.2105 24.9473 14.8659 24.8443V15.8594H17.8617Z" fill="white"></path>
-								<rect class="icon-social" x="45" width="25" height="25" rx="5" fill="#282a33"></rect>
-								<path class="icon-social" fill-rule="evenodd" clip-rule="evenodd" d="M65.1185 8.53223C65.2387 8.15142 65.1185 7.87444 64.5862 7.87444H62.8174C62.371 7.87444 62.1649 8.11677 62.0447 8.37647C62.0447 8.37647 61.1345 10.5922 59.8638 12.029C59.4517 12.4444 59.2628 12.5829 59.0396 12.5829C58.9193 12.5829 58.7648 12.4444 58.7648 12.0636V8.51491C58.7648 8.06485 58.6274 7.85712 58.2496 7.85712H55.4677C55.193 7.85712 55.0213 8.06485 55.0213 8.27258C55.0213 8.70537 55.6566 8.80921 55.7253 10.0209V12.6522C55.7253 13.2234 55.6223 13.3273 55.3991 13.3273C54.798 13.3273 53.3384 11.0942 52.4626 8.54955C52.2909 8.04752 52.1192 7.85712 51.6727 7.85712H49.8868C49.3716 7.85712 49.2858 8.0995 49.2858 8.35915C49.2858 8.82653 49.8868 11.1808 52.0848 14.2967C53.5445 16.4259 55.6223 17.5684 57.4941 17.5684C58.6274 17.5684 58.7648 17.3087 58.7648 16.876V15.2661C58.7648 14.7467 58.8678 14.6602 59.2285 14.6602C59.486 14.6602 59.9497 14.7987 60.9972 15.82C62.1992 17.0317 62.4053 17.5857 63.075 17.5857H64.8437C65.3589 17.5857 65.5993 17.326 65.4619 16.824C65.3074 16.322 64.7235 15.595 63.968 14.7294C63.5558 14.2448 62.9376 13.7081 62.7487 13.4484C62.4911 13.1023 62.5598 12.9638 62.7487 12.6522C62.7316 12.6522 64.8952 9.57089 65.1185 8.53223Z" fill="white"></path>
-								<rect class="icon-social" x="90" width="25" height="25" rx="5" fill="#282a33"></rect>
-								<path class="icon-social" d="M95.2219 12.0884C96.7249 11.2605 98.4026 10.5695 99.9702 9.87505C102.667 8.73751 105.375 7.61969 108.11 6.57901C108.642 6.40169 109.598 6.22828 109.692 7.01685C109.64 8.13306 109.429 9.24274 109.284 10.3524C108.917 12.7927 108.492 15.2246 108.077 17.6569C107.935 18.467 106.92 18.8865 106.27 18.368C104.71 17.3138 103.137 16.2699 101.596 15.1913C101.092 14.6785 101.56 13.942 102.01 13.5758C103.296 12.3091 104.659 11.2328 105.877 9.9006C106.206 9.10704 105.235 9.77583 104.915 9.98074C103.155 11.1934 101.438 12.4801 99.5829 13.5458C98.6352 14.0675 97.5307 13.6217 96.5834 13.3306C95.7341 12.9789 94.4895 12.6247 95.2218 12.0885L95.2219 12.0884Z" fill="white"></path>
-							</svg>
-						</div>
-					</div>
-				</section>
-				<section class="about" id="about-part">
-					<picture class="lozad js-lazy container-lines__line--1 picture" data-iesrc="./images/sprites/svg/lineMain1.svg" data-alt="line main 1">
-						<source srcset="./images/sprites/svg/lineMain1m.svg" media="(min-width: 0px) and (max-width: 425px)"/>
-						<source srcset="./images/sprites/svg/lineMain1.svg" media="(min-width: 426px)"/>
-						<source srcset="./images/sprites/svg/lineMain1.svg"/>
-					</picture>
-					<article class="about__experience">
-						<h2 class="about__title title--visible hidden-right">Опыт работы
-						</h2>
-						<ul class="experience__list">
-							<li class="experience-list__item block-text--visible hidden-up"><span class="about__text--gray">Июль 2019</span>
-								<div class="container-job"><span class="about__text--bold">Freelance Designer</span>
-									<picture class="lozad js-lazy picture" data-iesrc="./images/sprites/svg/freelanceRhombus.svg" data-alt="rhombus">
-										<source srcset="./images/sprites/svg/freelanceRhombus.svg"/>
-									</picture>
-								</div>
-								<div class="container-job">
-									<div class="container-text"><span class="about__text">Netherlands, Worldwide</span>
-									</div>
-								</div>
-								<div class="container">
-									<p class="about__text about__description">Available for a project or job in UX/UI, Visual and Product design.
-									</p>
-									<ul class="container__additional-links">
-										<li class="additional-links__item"><span class="about__link">Commercial tryouts</span></li>
-										<li class="additional-links__item"><span class="about__link">Personal projects</span></li>
+						<article class="about__education">
+							<h2 class="about__title title--hidden" data-scroll-class="active-right" data-scroll-offset="100, 100" data-scroll>Образование
+							</h2>
+							<ul class="education-list">
+								<li class="education-list__item block-text--hidden" data-scroll-class="active-up" data-scroll-offset="100, 150" data-scroll>
+									<picture class="lozad js-lazy education-list__image--first picture picture--animation" data-iesrc="./images/sprites/svg/interfaceRhombus.svg" data-alt="rhombus">
+										<source srcset="./images/sprites/svg/interfaceRhombus.svg"/>
+									</picture><span class="about__text--bold education__text">Interface Design:<br> Web & Mobile</span>
+									<ul class="education-list-type">
+										<li class="education-list-type__item">
+											<p class="about__text education__text">IT-Academy, 2020
+											</p>
+										</li>
 									</ul>
-								</div>
-							</li>
-							<li class="experience-list__item block-text--visible hidden-up"><span class="about__text--gray">Январь 2017 - Сентябрь 2018</span>
-								<div class="container-job"><span class="about__text--bold">Digital Designer</span>
-									<picture class="lozad js-lazy picture" data-iesrc="./images/sprites/svg/jcreativeRhombus.svg" data-alt="rhombus">
-										<source srcset="./images/sprites/svg/jcreativeRhombus.svg"/>
-									</picture>
-								</div>
-								<div class="container-job">
-									<picture class="lozad js-lazy picture" data-iesrc="./images/sprites/svg/jcreative.svg" data-alt="J Creative Solutions">
-										<source srcset="./images/sprites/svg/jcreative.svg"/>
-									</picture>
-									<div class="container-text"><span class="about__text--bold">J Creative Solutions</span><span class="about__text">Digital agency in Minsk, Belarus</span>
-									</div>
-								</div>
-								<div class="container">
-									<p class="about__text about__description">Created visuals for digital marketing channels such as social media, promo web and online ads. Developed visual language from scratch or following the branding guidelines. Designed presentations<br> for clients and indoor purposes.
-									</p>
-									<ul class="container__additional-links">
-										<li class="additional-links__item"><span class="about__link">Agency projects</span></li>
+								</li>
+								<li class="education-list__item block-text--hidden" data-scroll-class="active-up" data-scroll-offset="100, 150" data-scroll>
+									<picture class="lozad js-lazy education-list__image picture picture--animation" data-iesrc="./images/sprites/svg/fundamentRhombus.svg" data-alt="rhombus">
+										<source srcset="./images/sprites/svg/fundamentRhombus.svg"/>
+									</picture><span class="about__text--bold education__text">Fundamentals<br> of Usability</span>
+									<ul class="education-list-type">
+										<li class="education-list-type__item">
+											<p class="about__text education__text">Skillshare, Oct 2018
+											</p>
+										</li>
 									</ul>
-								</div>
-							</li>
-							<li class="experience-list__item block-text--visible hidden-up"><span class="about__text--gray">Март 2014 - Февраль 2017</span>
-								<div class="container-job"><span class="about__text--bold">SEO Specialist → Lead SEO Specialist</span>
-									<picture class="lozad js-lazy picture" data-iesrc="./images/sprites/svg/ozRhombus.svg" data-alt="rhombus">
-										<source srcset="./images/sprites/svg/ozRhombus.svg"/>
-									</picture>
-								</div>
-								<div class="container-job">
-									<picture class="lozad js-lazy picture" data-iesrc="./images/sprites/svg/oz.svg" data-alt="OZ.by">
-										<source srcset="./images/sprites/svg/oz.svg"/>
-									</picture>
-									<div class="container-text"><span class="about__text--bold">OZ.by</span><span class="about__text">Online bookstore in Minsk, Belarus</span>
-									</div>
-								</div>
-								<div class="container">
-									<p class="about__text about__description">Improved website performance and user experience of the biggest online bookstore OZ in Belarus, being a part of the marketing team,<br> I interpreted Google Analytics data to IT, content and marketing colleagues. Advised on tech and content optimization strategy, automated processes, provided reports, increased organic traffic up to 150%.
-									</p>
-									<ul class="container__additional-links">
-										<li class="additional-links__item"><span class="about__link">Annual company report 2016</span></li>
+								</li>
+								<li class="education-list__item block-text--hidden" data-scroll-class="active-up" data-scroll-offset="100, 150" data-scroll>
+									<picture class="lozad js-lazy education-list__image picture picture--animation" data-iesrc="./images/sprites/svg/artistRhombus.svg" data-alt="rhombus">
+										<source srcset="./images/sprites/svg/artistRhombus.svg"/>
+									</picture><span class="about__text--bold education__text">CG Artist</span>
+									<ul class="education-list-type">
+										<li class="education-list-type__item">
+											<p class="about__text education__text">Polygon CG School, May-Sep 2017
+											</p>
+										</li>
 									</ul>
-								</div>
-							</li>
-							<li class="experience-list__item block-text--visible hidden-up"><span class="about__text--gray">Август 2012 - Ноябрь 2013</span>
-								<div class="container-job"><span class="about__text--bold">Content Specialist</span>
-									<picture class="lozad js-lazy picture" data-iesrc="./images/sprites/svg/21vekRhombus.svg" data-alt="rhombus">
-										<source srcset="./images/sprites/svg/21vekRhombus.svg"/>
-									</picture>
-								</div>
-								<div class="container-job">
-									<picture class="lozad js-lazy picture" data-iesrc="./images/sprites/svg/21vek.svg" data-alt="21vek.by">
-										<source srcset="./images/sprites/svg/21vek.svg"/>
-									</picture>
-									<div class="container-text"><span class="about__text--bold">21vek.by</span><span class="about__text">E-commerce store in Minsk, Belarus</span>
-									</div>
-								</div>
-								<div class="container">
-									<p class="about__text about__description">Added and modified the product information, prepared images and text for the website, developed categories filters, ensure all info is correct in the catalogue with the goal of improving online shopper experience.
-									</p>
-									<ul class="container__additional-links">
+								</li>
+								<li class="education-list__item block-text--hidden" data-scroll-class="active-up" data-scroll-offset="100, 150" data-scroll>
+									<picture class="lozad js-lazy education-list__image picture picture--animation" data-iesrc="./images/sprites/svg/graphicRhombus.svg" data-alt="rhombus">
+										<source srcset="./images/sprites/svg/graphicRhombus.svg"/>
+									</picture><span class="about__text--bold education__text">Graphic Design</span>
+									<ul class="education-list-type">
+										<li class="education-list-type__item">
+											<p class="about__text education__text">Belarusian State Academy of Arts,<br> 2015 - 2017 Postgraduate Diploma
+											</p>
+										</li>
 									</ul>
-								</div>
-							</li>
-							<li class="experience-list__item block-text--visible hidden-up"><span class="about__text--gray">Август 2011 - Ноябрь 2014</span>
-								<div class="container-job"><span class="about__text--bold">Software Support Engineer</span>
-									<picture class="lozad js-lazy picture" data-iesrc="./images/sprites/svg/integralRhombus.svg" data-alt="rhombus">
-										<source srcset="./images/sprites/svg/integralRhombus.svg"/>
-									</picture>
-								</div>
-								<div class="container-job">
-									<picture class="lozad js-lazy picture" data-iesrc="./images/sprites/svg/integral.svg" data-alt="Integral">
-										<source srcset="./images/sprites/svg/integral.svg"/>
-									</picture>
-									<div class="container-text"><span class="about__text--bold">Integral</span><span class="about__text">Microelectronics factory in Minsk, Belarus</span>
-									</div>
-								</div>
-								<div class="container">
-									<p class="about__text about__description">Supported retail accounting system LS Trade, troubleshoot technical problems.
-									</p>
-									<ul class="container__additional-links">
+								</li>
+								<li class="education-list__item block-text--hidden" data-scroll-class="active-up" data-scroll-offset="100, 150" data-scroll>
+									<picture class="lozad js-lazy education-list__image picture picture--animation" data-iesrc="./images/sprites/svg/seoRhombus.svg" data-alt="rhombus">
+										<source srcset="./images/sprites/svg/seoRhombus.svg"/>
+									</picture><span class="about__text--bold education__text">SEO Specialist</span>
+									<ul class="education-list-type">
+										<li class="education-list-type__item">
+											<p class="about__text education__text">ARTOX Media,<br> Jun-Aug 2012
+											</p>
+										</li>
 									</ul>
-								</div>
-							</li>
-						</ul>
-					</article>
-					<div class="about__container-image">
-						<picture class="lozad js-lazy about__image picture" data-iesrc="./images/man.png" data-alt="Man">
-							<source srcset="./images/man.png"/>
+								</li>
+								<li class="education-list__item block-text--hidden" data-scroll-class="active-up" data-scroll-offset="100, 150" data-scroll>
+									<picture class="lozad js-lazy education-list__image picture picture--animation" data-iesrc="./images/sprites/svg/informationRhombus.svg" data-alt="rhombus">
+										<source srcset="./images/sprites/svg/informationRhombus.svg"/>
+									</picture><span class="about__text--bold education__text">Information Technology Software</span>
+									<ul class="education-list-type">
+										<li class="education-list-type__item">
+											<p class="about__text education__text">Belarusian State University of Informatics and Radioelectronics, 2011 - 2015<br> Bachelor’s degree
+											</p>
+										</li>
+										<li class="education-list-type__item">
+											<p class="about__text education__text">Polotsk State Economic College, 2007 - 2011 Associate’s degree
+											</p>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</article>
+					</section>
+					<article class="skills" id="skills-part">
+						<picture class="lozad js-lazy container-lines__line--2 picture" data-iesrc="./images/sprites/svg/lineMain2.svg" data-alt="line main 2">
+							<source srcset="./images/sprites/svg/lineMain2m.svg" media="(min-width: 0px) and (max-width: 425px)"/>
+							<source srcset="./images/sprites/svg/lineMain2.svg" media="(min-width: 426px)"/>
+							<source srcset="./images/sprites/svg/lineMain2.svg"/>
 						</picture>
-					</div>
-					<article class="about__education">
-						<h2 class="about__title title--visible hidden-right">Образование
-						</h2>
-						<ul class="education-list">
-							<li class="education-list__item block-text--visible hidden-up">
-								<picture class="lozad js-lazy education-list__image--first picture" data-iesrc="./images/sprites/svg/interfaceRhombus.svg" data-alt="rhombus">
-									<source srcset="./images/sprites/svg/interfaceRhombus.svg"/>
-								</picture><span class="about__text--bold education__text">Interface Design:<br> Web & Mobile</span>
-								<ul class="education-list-type">
-									<li class="education-list-type__item">
-										<p class="about__text education__text">IT-Academy, 2020
-										</p>
-									</li>
-								</ul>
-							</li>
-							<li class="education-list__item block-text--visible hidden-up">
-								<picture class="lozad js-lazy education-list__image picture" data-iesrc="./images/sprites/svg/fundamentRhombus.svg" data-alt="rhombus">
-									<source srcset="./images/sprites/svg/fundamentRhombus.svg"/>
-								</picture><span class="about__text--bold education__text">Fundamentals<br> of Usability</span>
-								<ul class="education-list-type">
-									<li class="education-list-type__item">
-										<p class="about__text education__text">Skillshare, Oct 2018
-										</p>
-									</li>
-								</ul>
-							</li>
-							<li class="education-list__item block-text--visible hidden-up">
-								<picture class="lozad js-lazy education-list__image picture" data-iesrc="./images/sprites/svg/artistRhombus.svg" data-alt="rhombus">
-									<source srcset="./images/sprites/svg/artistRhombus.svg"/>
-								</picture><span class="about__text--bold education__text">CG Artist</span>
-								<ul class="education-list-type">
-									<li class="education-list-type__item">
-										<p class="about__text education__text">Polygon CG School, May-Sep 2017
-										</p>
-									</li>
-								</ul>
-							</li>
-							<li class="education-list__item block-text--visible hidden-up">
-								<picture class="lozad js-lazy education-list__image picture" data-iesrc="./images/sprites/svg/graphicRhombus.svg" data-alt="rhombus">
-									<source srcset="./images/sprites/svg/graphicRhombus.svg"/>
-								</picture><span class="about__text--bold education__text">Graphic Design</span>
-								<ul class="education-list-type">
-									<li class="education-list-type__item">
-										<p class="about__text education__text">Belarusian State Academy of Arts,<br> 2015 - 2017 Postgraduate Diploma
-										</p>
-									</li>
-								</ul>
-							</li>
-							<li class="education-list__item block-text--visible hidden-up">
-								<picture class="lozad js-lazy education-list__image picture" data-iesrc="./images/sprites/svg/seoRhombus.svg" data-alt="rhombus">
-									<source srcset="./images/sprites/svg/seoRhombus.svg"/>
-								</picture><span class="about__text--bold education__text">SEO Specialist</span>
-								<ul class="education-list-type">
-									<li class="education-list-type__item">
-										<p class="about__text education__text">ARTOX Media,<br> Jun-Aug 2012
-										</p>
-									</li>
-								</ul>
-							</li>
-							<li class="education-list__item block-text--visible hidden-up">
-								<picture class="lozad js-lazy education-list__image picture" data-iesrc="./images/sprites/svg/informationRhombus.svg" data-alt="rhombus">
-									<source srcset="./images/sprites/svg/informationRhombus.svg"/>
-								</picture><span class="about__text--bold education__text">Information Technology Software</span>
-								<ul class="education-list-type">
-									<li class="education-list-type__item">
-										<p class="about__text education__text">Belarusian State University of Informatics and Radioelectronics, 2011 - 2015<br> Bachelor’s degree
-										</p>
-									</li>
-									<li class="education-list-type__item">
-										<p class="about__text education__text">Polotsk State Economic College, 2007 - 2011 Associate’s degree
-										</p>
-									</li>
-								</ul>
-							</li>
-						</ul>
+						<div class="skills-container">
+							<h2 class="skills__title title--hidden" data-scroll-class="active-right" data-scroll-offset="100, 100" data-scroll>Навыки
+							</h2>
+							<ul class="skills__list">
+								<li class="list__item block-text--hidden" data-scroll-class="active-up" data-scroll-offset="100, 100" data-scroll>
+									<h4 class="list__title">Adobe Creative Suite
+									</h4>
+									<p class="list__text">Photoshop, Illustrator, InDesign, XD, After Effects
+									</p>
+								</li>
+								<li class="list__item block-text--hidden" data-scroll-class="active-up" data-scroll-offset="100, 100" data-scroll>
+									<h4 class="list__title">Prototyping
+									</h4>
+									<p class="list__text">Sketch, Figma, InVision, Marvel, Principle, Balsamiq
+									</p>
+								</li>
+								<li class="list__item block-text--hidden" data-scroll-class="active-up" data-scroll-offset="100, 100" data-scroll>
+									<h4 class="list__title">Additional
+									</h4>
+									<p class="list__text">HTML, CSS, Google Analytics, Keynote, Miro
+									</p>
+								</li>
+								<li class="list__item block-text--hidden" data-scroll-class="active-up" data-scroll-offset="100, 100" data-scroll>
+									<h4 class="list__title">Languages
+									</h4>
+									<p class="list__text">Conversational English and Native Russian
+									</p>
+								</li>
+							</ul>
+						</div>
 					</article>
-				</section>
-				<article class="skills" id="skills-part">
-					<picture class="lozad js-lazy container-lines__line--2 picture" data-iesrc="./images/sprites/svg/lineMain2.svg" data-alt="line main 2">
-						<source srcset="./images/sprites/svg/lineMain2m.svg" media="(min-width: 0px) and (max-width: 425px)"/>
-						<source srcset="./images/sprites/svg/lineMain2.svg" media="(min-width: 426px)"/>
-						<source srcset="./images/sprites/svg/lineMain2.svg"/>
-					</picture>
-					<div class="skills-container">
-						<h2 class="skills__title title--visible hidden-right">Навыки
-						</h2>
-						<ul class="skills__list">
-							<li class="list__item block-text--visible hidden-up">
-								<h4 class="list__title">Adobe Creative Suite
-								</h4>
-								<p class="list__text">Photoshop, Illustrator, InDesign, XD, After Effects
-								</p>
-							</li>
-							<li class="list__item block-text--visible hidden-up">
-								<h4 class="list__title">Prototyping
-								</h4>
-								<p class="list__text">Sketch, Figma, InVision, Marvel, Principle, Balsamiq
-								</p>
-							</li>
-							<li class="list__item block-text--visible hidden-up">
-								<h4 class="list__title">Additional
-								</h4>
-								<p class="list__text">HTML, CSS, Google Analytics, Keynote, Miro
-								</p>
-							</li>
-							<li class="list__item block-text--visible hidden-up">
-								<h4 class="list__title">Languages
-								</h4>
-								<p class="list__text">Conversational English and Native Russian
-								</p>
-							</li>
-						</ul>
-					</div>
-				</article>
-			</main>
-			<footer class="footer">
-				<div class="footer__container">
-					<picture class="lozad js-lazy footer__picture image--visible hidder-image__left picture" data-iesrc="./images/love-left.png" data-alt="love-left">
-						<source srcset="./images/love-left.png"/>
-					</picture>
-					<picture class="lozad js-lazy footer__picture image--visible hidder-image__right picture" data-iesrc="./images/love-right.png" data-alt="love-right">
-						<source srcset="./images/love-right.png"/>
-					</picture>
-				</div>
-			</footer>
+					<section class="love">
+						<div class="love__container">
+							<picture class="lozad js-lazy love__picture image-hidden--left" data-iesrc="./images/love-left.png" data-alt="love-left" data-scroll-class="active-image" data-scroll="data-scroll">
+								<source srcset="./images/love-left.png"/>
+							</picture>
+							<picture class="lozad js-lazy love__picture image-hidden--right" data-iesrc="./images/love-right.png" data-alt="love-right" data-scroll-class="active-image" data-scroll="data-scroll">
+								<source srcset="./images/love-right.png"/>
+							</picture>
+						</div>
+					</section>
+				</main>
+			</div>
 			<button class="scroll-up">
 				<svg class="scroll-up__indicator" width="50" height="50" viewport="0 0 100 100" xmlns="https://www.w3.org/2000/svg">
 					<circle class="indicator-default" cx="-50%" cy="50%" r="47%"></circle>
@@ -433,7 +435,7 @@
 				document.getElementsByTagName('head')[0].appendChild(script);
 			}
 		</script>
-		<script src="./js/vendor.js?v=1703269445763"></script>
-		<script src="./js/main.js?v=1703269445763"></script>
+		<script src="./js/vendor.js?v=1703422451046"></script>
+		<script src="./js/main.js?v=1703422451046"></script>
 	</body>
 </html>
