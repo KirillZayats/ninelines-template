@@ -105,7 +105,7 @@ const shareContent = () => {
 };
 
 const setImageMeta = (selector, valueImage) => {
-	const meta = DOM.search(selector);
+	const meta = DOM.searchById(selector);
 	DOM.attr(meta, 'content', valueImage);
 };
 
@@ -114,8 +114,8 @@ const shareDynamicContent = () => {
 	const dynamicContent = DOM.searchById('share-dynamic');
 	html2canvas(dynamicContent).then((canvas) => {
 		const valueImage = canvas.toDataURL('image/png'); // url полученой картинки
-		setImageMeta('meta[property="og:image"]', valueImage);
-		setImageMeta('meta[property="twitter:image"]', valueImage);
+		setImageMeta('metaOg', valueImage);
+		setImageMeta('metaTwitter', valueImage);
 		shareContent();
 	});
 };

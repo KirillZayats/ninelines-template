@@ -139,7 +139,7 @@ html(class=html.classList)&attributes(html.attrs)
 			if meta.ogDescription !== null
 				meta(property="og:description" content!=meta.ogDescription)
 			if meta.ogImage !== null
-				meta(property="og:image" content!=meta.ogImage)
+				meta#metaOg(property="og:image" content!=meta.ogImage)
 			if meta.ogImageType !== null
 				meta(property="og:image:type" content!=meta.ogImageType)
 			if meta.ogImageWidth !== null
@@ -159,7 +159,7 @@ html(class=html.classList)&attributes(html.attrs)
 			if meta.twitterDescription !== null
 				meta(name="twitter:description" content!=meta.twitterDescription)
 			if meta.twitterImage !== null
-				meta(name="twitter:image" content!=meta.twitterImage)
+				meta#metaTwitter(name="twitter:image" content!=meta.twitterImage)
 			if meta.appleMobileWebAppCapable !== null
 				meta(name="apple-mobile-web-app-capable" content!=meta.appleMobileWebAppCapable)
 			if meta.appleMobileWebAppStatusBarStyle !== null
