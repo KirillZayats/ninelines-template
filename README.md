@@ -24,7 +24,7 @@ npm install
 Запустить локально проект (запускает build, watch и serve):
 
 ```sh
-gulp  default
+gulp default
 ```
 
 **_Деплой сделан через Gh-pages._**
@@ -55,13 +55,14 @@ gulp  default
 * `animations` — настройки для анимаций, которые можно использовать без библиотеки [locomotive-scroll](https://github.com/locomotivemtl/locomotive-scroll), путь `scss/animations/`.
 * `locomotive-scroll` — настройки для библиотеки locomotive scroll, путь `scss/`.
 * `_animations` — в файле находится миксин и анимация пульсации объектов, путь `scss/mixins/`.
+
 **Некоторые другие файлы были обновлены. Например в файле `_helpers` (путь `scss/mixins/`) были добавлены новые миксины**
 
 ### JS
 * `domHelper` — файл с классом DOM, которые утращает взаимодействие с DOM деревом, путь `js/`.
 * `burgerMenu` — настройка бургер меню сайта, путь `js/components`.
 * `home` — инициализация анимации для элементов страницы (если locomotive scroll отключить), путь `js/components`.
-* `listNav` — переключению разделов, путь `js/components`.
+* `listNav` — переключение разделов, путь `js/components`.
 * `preloader` — настройка прелоадера, путь `js/components`.
 * `scrollIndicator` — настройка индикатора прокрутки страницы, путь `js/components`.
 * `share` — скрипт по взаимодействию с модульным окном шеринга, путь `js/components`.
