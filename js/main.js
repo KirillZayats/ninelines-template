@@ -348,10 +348,7 @@ __webpack_require__.r(__webpack_exports__);
 var listNav = _domHelper__WEBPACK_IMPORTED_MODULE_0__["default"].searchAll('.header__link');
 var navLines = _domHelper__WEBPACK_IMPORTED_MODULE_0__["default"].searchAll('.header__line');
 var nameActiveLine = 'header__line--active';
-var listMainBlocks = [_domHelper__WEBPACK_IMPORTED_MODULE_0__["default"].searchById('resume-part')
-// DOM.searchById('about-part'),
-// DOM.searchById('skills-part'),
-];
+var listMainBlocks = [_domHelper__WEBPACK_IMPORTED_MODULE_0__["default"].searchById('resume-part'), _domHelper__WEBPACK_IMPORTED_MODULE_0__["default"].searchById('about-part'), _domHelper__WEBPACK_IMPORTED_MODULE_0__["default"].searchById('skills-part')];
 var getHeightHeader = function getHeightHeader() {
   var width = window.innerWidth;
   if (width >= 1800) {
@@ -562,10 +559,6 @@ scrollUp.addEventListener('click', function () {
     _modules_locomotive__WEBPACK_IMPORTED_MODULE_1__["scrollLocomotive"].scrollTo('top');
   }
   window.scrollTo(0, 0);
-
-  // if(window.innerWidth > 1024) {
-  // } else {
-  // }
   removeScroll();
 });
 
