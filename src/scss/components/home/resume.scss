@@ -115,6 +115,12 @@
 		&__item {
 			@include font(400, 1.4rem, 140%);
 		}
+
+		@include hoverPointer {
+			a:hover {
+				color: $color-red;
+			}
+		}
 	}
 
 	.social-icons {
