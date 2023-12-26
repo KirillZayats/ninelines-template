@@ -490,7 +490,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "scrollIndicator", function() { return scrollIndicator; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeScroll", function() { return removeScroll; });
 /* harmony import */ var _domHelper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../domHelper */ "./src/js/domHelper.js");
-/* harmony import */ var _modules_locomotive__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/locomotive */ "./src/js/modules/locomotive.js");
+/* harmony import */ var _modules_device__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/device */ "./src/js/modules/device.js");
+/* harmony import */ var _modules_locomotive__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../modules/locomotive */ "./src/js/modules/locomotive.js");
+
 
 
 var scrollUp = document.querySelector('.scroll-up');
@@ -532,12 +534,17 @@ var removeScroll = function removeScroll() {
 };
 var scrollIndicator = function scrollIndicator(scrollTop) {
   winScroll = scrollTop;
-  if (window.innerWidth > 1024 && _modules_locomotive__WEBPACK_IMPORTED_MODULE_1__["scrollLocomotive"]) {
-    height = _modules_locomotive__WEBPACK_IMPORTED_MODULE_1__["scrollLocomotive"].scroll.instance.limit.y;
+  if (_modules_device__WEBPACK_IMPORTED_MODULE_1__["typeDevice"] === 'desktop' && _modules_locomotive__WEBPACK_IMPORTED_MODULE_2__["scrollLocomotive"]) {
+    height = _modules_locomotive__WEBPACK_IMPORTED_MODULE_2__["scrollLocomotive"].scroll.instance.limit.y;
+    scrolled = (winScroll / height * 100).toFixed(0);
   } else {
     height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   }
   scrolled = (winScroll / height * 100).toFixed(0);
+  if (_modules_device__WEBPACK_IMPORTED_MODULE_1__["typeDevice"] === 'mobile' && window.innerWidth < 768 && scrolled > 95) {
+    height = document.body.offsetHeight;
+    scrolled = ((window.innerHeight + winScroll) / height * 100).toFixed(0);
+  }
   var offSet = totalLength - totalLength * scrolled / 100;
   progressBar.style.strokeDashoffset = +offSet === +totalLength ? offSet - 1 : offSet;
   changeContentIndicator(scrolled, offSet);
@@ -555,8 +562,8 @@ scrollUp.addEventListener('mouseout', function () {
   removeScroll();
 });
 scrollUp.addEventListener('click', function () {
-  if (_modules_locomotive__WEBPACK_IMPORTED_MODULE_1__["scrollLocomotive"]) {
-    _modules_locomotive__WEBPACK_IMPORTED_MODULE_1__["scrollLocomotive"].scrollTo('top');
+  if (_modules_locomotive__WEBPACK_IMPORTED_MODULE_2__["scrollLocomotive"]) {
+    _modules_locomotive__WEBPACK_IMPORTED_MODULE_2__["scrollLocomotive"].scrollTo('top');
   }
   window.scrollTo(0, 0);
   removeScroll();
@@ -1079,6 +1086,29 @@ var actualYear = function actualYear() {
 
 /***/ }),
 
+/***/ "./src/js/modules/device.js":
+/*!**********************************!*\
+  !*** ./src/js/modules/device.js ***!
+  \**********************************/
+/*! exports provided: typeDevice */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "typeDevice", function() { return typeDevice; });
+var getDeviceType = function getDeviceType() {
+  var userAgent = navigator.userAgent.toLowerCase();
+  var isMobile = /mobile|iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(userAgent);
+  if (isMobile) {
+    return 'mobile';
+  }
+  return 'desktop';
+};
+var typeDevice = getDeviceType();
+
+
+/***/ }),
+
 /***/ "./src/js/modules/lazyLoading.js":
 /*!***************************************!*\
   !*** ./src/js/modules/lazyLoading.js ***!
@@ -1141,6 +1171,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_scrollIndicator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/scrollIndicator */ "./src/js/components/scrollIndicator.js");
 /* harmony import */ var _observer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./observer */ "./src/js/modules/observer.js");
 /* harmony import */ var _domHelper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../domHelper */ "./src/js/domHelper.js");
+/* harmony import */ var _device__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./device */ "./src/js/modules/device.js");
+
 
 
 
@@ -1155,7 +1187,13 @@ var initEvents = function initEvents() {
     currentY = object.scroll.y;
     Object(_components_scrollIndicator__WEBPACK_IMPORTED_MODULE_1__["scrollIndicator"])(currentY);
     Object(_components_scrollIndicator__WEBPACK_IMPORTED_MODULE_1__["removeScroll"])();
-    header.style.transform = "translate3d(0, ".concat(currentY, "px, 0)");
+    switch (_device__WEBPACK_IMPORTED_MODULE_4__["typeDevice"]) {
+      case 'desktop':
+        header.style.transform = "translate3d(0, ".concat(currentY, "px, 0)");
+        break;
+      default:
+        break;
+    }
   });
 };
 var initScroll = function initScroll() {
@@ -1175,8 +1213,6 @@ window.addEventListener('resize', function () {
     isResize = true;
     if (!scrollLocomotive) {
       initScroll();
-    } else {
-      initEvents();
     }
   } else if (isResize) {
     isResize = false;
