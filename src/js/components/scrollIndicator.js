@@ -1,4 +1,5 @@
 import DOM from '../domHelper';
+import {typeDevice} from '../modules/device';
 import {scrollLocomotive} from '../modules/locomotive';
 
 const scrollUp = document.querySelector('.scroll-up');
@@ -45,14 +46,20 @@ const removeScroll = () => {
 
 const scrollIndicator = (scrollTop) => {
 	winScroll = scrollTop;
-	if (window.innerWidth > 1024 && scrollLocomotive) {
+	if (typeDevice === 'desktop' && scrollLocomotive) {
 		height = scrollLocomotive.scroll.instance.limit.y;
+		scrolled = (winScroll / height * 100).toFixed(0);
 	} else {
 		height =
 		document.documentElement.scrollHeight -
 		document.documentElement.clientHeight;
 	}
 	scrolled = (winScroll / height * 100).toFixed(0);
+
+	if (typeDevice === 'mobile' && window.innerWidth < 768 && scrolled > 95) {
+		height = document.body.offsetHeight;
+		scrolled = ((window.innerHeight + winScroll) / height * 100).toFixed(0);
+	}
 
 	let offSet = totalLength - totalLength * scrolled / 100;
 	progressBar.style.strokeDashoffset =

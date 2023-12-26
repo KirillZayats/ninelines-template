@@ -2,6 +2,7 @@ import LocomotiveScroll from 'locomotive-scroll';
 import {removeScroll, scrollIndicator} from '../components/scrollIndicator';
 import {initObserverUpdate} from './observer';
 import DOM from '../domHelper';
+import {typeDevice} from './device';
 
 const header = DOM.search('.header');
 let scrollLocomotive;
@@ -14,7 +15,13 @@ const initEvents = () => {
 		currentY = object.scroll.y;
 		scrollIndicator(currentY);
 		removeScroll();
-		header.style.transform = `translate3d(0, ${currentY}px, 0)`;
+		switch (typeDevice) {
+			case 'desktop':
+				header.style.transform = `translate3d(0, ${currentY}px, 0)`;
+				break;
+			default:
+				break;
+		}
 	});
 };
 
@@ -36,8 +43,6 @@ window.addEventListener('resize', () => {
 		isResize = true;
 		if (!scrollLocomotive) {
 			initScroll();
-		} else {
-			initEvents();
 		}
 	} else if (isResize) {
 		isResize = false;
@@ -46,6 +51,4 @@ window.addEventListener('resize', () => {
 	}
 });
 
-export {
-	scrollLocomotive, initScroll,
-};
+export {scrollLocomotive, initScroll};
